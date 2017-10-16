@@ -1,0 +1,46 @@
+@import "variables";
+@import "mixins";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  // border: 1px solid red;
+
+  &:before,
+  &:after{
+    box-sizing: border-box;
+  }
+}
+
+body{
+  min-height: 100%;
+  background-color: $white;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 150px 1fr;
+}
+
+img{
+  @include square(100%);
+}
+
+input, button{
+  &:focus{
+    outline: none;
+  }
+}
+
+.flex{
+  display: flex;
+
+  &.center-X{
+    justify-content: center;
+  }
+
+  &.center-Y{
+    align-items: center;
+  }
+}

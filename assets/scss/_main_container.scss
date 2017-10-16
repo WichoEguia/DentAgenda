@@ -1,0 +1,27 @@
+#main_content{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  // grid-template-rows: repeat(10, 400px);
+
+  *{
+    // border: 1px solid red;
+  }
+}
+
+.title_section{
+  grid-column: 2/span 10;
+  height: 100px;
+  justify-content: space-between;
+  color: #7F7F7F;
+  // background: $green;
+
+  p{
+    font-size: 20px;
+  }
+}
+
+.caca{
+  border: 1px solid $red;
+  height: 100px;
+  grid-row: 2;
+}

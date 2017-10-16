@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixins";
+
+$espaio_icono: 55px;
+
+nav{
+  background: lighten($deepblue, 3%);
+  height: 100vh;
+  width: $espaio_icono * 5;
+  position: fixed;
+  left: 0;
+  padding-top: $header_height;
+  z-index: 99;
+  display: grid;
+  grid-template-rows: 1fr;
+  box-shadow: $espaio_icono 0 $deepblue inset;
+}
+
+#nav_container{
+  div{
+    height: $espaio_icono;
+
+    *{
+      // border: 1px solid $red;
+    }
+
+    .icon_nav,
+    .text_nav{
+      color: #8f8f8f;
+      cursor: pointer;
+    }
+
+    .icon_nav{
+      background: $deepblue;
+      width: 20%;
+      font-size: 20px;
+
+      i{
+        font-size: 13px;
+      }
+    }
+
+    .text_nav{
+      height: 100%;
+      width: 80%;
+      background: lighten($deepblue, 3%);
+      font-size: 17px;
+      padding-left: 20px;
+    }
+
+    &:hover div{
+      color: $white;;
+    }
+  }
+}
