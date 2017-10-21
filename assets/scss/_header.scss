@@ -81,6 +81,7 @@ header{
   background: #fff;
   height: $header_height - 80px;
   width: 100%;
+  padding: 0 70px;
 
   .section_actionbar{
     width: 50%;
@@ -95,51 +96,12 @@ header{
     &.left{
       @include mq("tablet", "max"){
         width: 100%;
-
-        #searchbar_container{
-          width: 100%;
-          margin: 0 30px;
-        }
       }
     }
   }
 
   @include mq("phone", "max"){
     display: none;
-  }
-}
-
-#searchbar_container{
-  height: 100%;
-  width: 450px;
-  margin-left: 30px;
-
-  #searchbar{
-    height: 100%;
-    width: 100%;
-
-    input{
-      height: 100%;
-      width: 300px;
-      border: none;
-      flex: auto;
-      font-size: 23px;
-
-      &::placeholder{
-        color: lighten($gray, 17%);
-        font-size: 17px;
-      }
-
-      &:focus{
-        outline: none;
-      }
-    }
-
-    i{
-      margin-right: 10px;
-      font-size: 20px;
-      color: lighten($gray, 17%);
-    }
   }
 }
 
@@ -150,26 +112,20 @@ header{
   button{
     @include circle(40px);
     background: transparent;
-    border: 2px solid lighten($gray, 15%);
-    margin-right: 75px;
+    border: 2px solid $gray;
     position: relative;
 
     i{
-      color: lighten($gray, 15%);
+      color: $gray;
       font-size: 20px;
-    }
-
-    &:after{
-      content: '3';
-      @include circle(17.5px);
-      background: $red;
-      position: absolute;
-      right: -5px;
-      top: -5px;
-      color: $white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 }
+
+#full_date{
+  font-size: 18px;
+  margin-right: 20px;
+  color: $gray;
+}
+
+// TODO: Las 8 Reglas de oro

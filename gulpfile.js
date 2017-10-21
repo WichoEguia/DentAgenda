@@ -2,7 +2,7 @@ const gulp = require("gulp"),
       sass = require("gulp-sass"),
       autoprefixer = require("gulp-autoprefixer");
 
-gulp.task('sass', () =>
+gulp.task('main_task', () =>
   gulp.src("./assets/scss/*.scss")
       .pipe(sass({
         outputStyle: "expanded"
@@ -14,5 +14,5 @@ gulp.task('sass', () =>
 );
 
 gulp.task("default", () =>
-  gulp.watch("./assets/scss/*.scss", ["sass"])
+  gulp.watch("./assets/scss/*.scss", ["main_task"])
 );

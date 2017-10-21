@@ -148,6 +148,7 @@ header {
   background: #fff;
   height: 70px;
   width: 100%;
+  padding: 0 70px;
 }
 
 #actionbar .section_actionbar {
@@ -165,67 +166,12 @@ header {
   #actionbar .section_actionbar.left {
     width: 100%;
   }
-  #actionbar .section_actionbar.left #searchbar_container {
-    width: 100%;
-    margin: 0 30px;
-  }
 }
 
 @media only screen and (max-width: 399px) {
   #actionbar {
     display: none;
   }
-}
-
-#searchbar_container {
-  height: 100%;
-  width: 450px;
-  margin-left: 30px;
-}
-
-#searchbar_container #searchbar {
-  height: 100%;
-  width: 100%;
-}
-
-#searchbar_container #searchbar input {
-  height: 100%;
-  width: 300px;
-  border: none;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
-  font-size: 23px;
-}
-
-#searchbar_container #searchbar input::-webkit-input-placeholder {
-  color: #c1c1c5;
-  font-size: 17px;
-}
-
-#searchbar_container #searchbar input:-ms-input-placeholder {
-  color: #c1c1c5;
-  font-size: 17px;
-}
-
-#searchbar_container #searchbar input::-ms-input-placeholder {
-  color: #c1c1c5;
-  font-size: 17px;
-}
-
-#searchbar_container #searchbar input::placeholder {
-  color: #c1c1c5;
-  font-size: 17px;
-}
-
-#searchbar_container #searchbar input:focus {
-  outline: none;
-}
-
-#searchbar_container #searchbar i {
-  margin-right: 10px;
-  font-size: 20px;
-  color: #c1c1c5;
 }
 
 #msg_container {
@@ -240,35 +186,19 @@ header {
   height: 40px;
   border-radius: 100%;
   background: transparent;
-  border: 2px solid #bcbcc0;
-  margin-right: 75px;
+  border: 2px solid #95949B;
   position: relative;
 }
 
 #msg_container button i {
-  color: #bcbcc0;
+  color: #95949B;
   font-size: 20px;
 }
 
-#msg_container button:after {
-  content: '3';
-  width: 17.5px;
-  height: 17.5px;
-  border-radius: 100%;
-  background: #EE4040;
-  position: absolute;
-  right: -5px;
-  top: -5px;
-  color: #F3F7FA;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#full_date {
+  font-size: 18px;
+  margin-right: 20px;
+  color: #95949B;
 }
 
 nav {

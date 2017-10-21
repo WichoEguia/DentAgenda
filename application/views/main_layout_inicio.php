@@ -33,18 +33,20 @@
     </div>
     <div id="actionbar" class="flex">
       <!-- Barra de busqueda, añadir persona, estilos de vista -->
-      <div class="section_actionbar left flex">
-        <div id="searchbar_container" class="flex center-X center-Y">
+      <div class="section_actionbar left flex center-Y">
+        <!-- <div id="searchbar_container" class="flex center-X center-Y">
           <div id="searchbar" class="flex center-Y">
             <i class="fa fa-search" aria-hidden="true"></i>
             <input type="text" placeholder="Buscar equipos y personas">
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="section_actionbar right">
         <div id="msg_container" class="flex center-Y">
+          <p id="full_date"></p>
+          
           <button clss="flex center-Y center-X">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -54,27 +56,27 @@
     <div id="nav_container">
       <div class="flex">
         <div class="icon_nav flex center-X center-Y">
-          <i class="fa fa-users" aria-hidden="true"></i>
+          <i class="fa fa-home" aria-hidden="true"></i>
         </div>
-        <div class="text_nav flex center-Y">Equipos</div>
+        <div class="text_nav flex center-Y">Inicio</div>
       </div>
       <div class="flex">
         <div class="icon_nav flex center-X center-Y">
-          <i class="fa fa-book" aria-hidden="true"></i>
+          <i class="fa fa-id-card-o" aria-hidden="true"></i>
         </div>
-        <div class="text_nav flex center-Y">Proyectos</div>
+        <div class="text_nav flex center-Y">Perfil</div>
       </div>
       <div class="flex">
         <div class="icon_nav flex center-X center-Y">
-          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <i class="fa fa-address-book-o" aria-hidden="true"></i>
         </div>
         <div class="text_nav flex center-Y">Agenda</div>
       </div>
       <div class="flex">
         <div class="icon_nav flex center-X center-Y">
-          <i class="fa fa-cogs" aria-hidden="true"></i>
+          <i class="fa fa-list" aria-hidden="true"></i>
         </div>
-        <div class="text_nav flex center-Y">Administrar</div>
+        <div class="text_nav flex center-Y">Inventario</div>
       </div>
     </div>
   </nav>
