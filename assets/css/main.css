@@ -16,7 +16,7 @@ body {
   background-color: #F3F7FA;
   height: 100vh;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 55px 1fr;
   grid-template-rows: 150px 1fr;
 }
 
@@ -45,6 +45,14 @@ input:focus, button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.color {
+  background: #3368d6;
 }
 
 header {
@@ -201,50 +209,44 @@ header {
   color: #95949B;
 }
 
-nav {
-  background: #384154;
+nav .nav_iconbar {
+  background: #1e222c;
   height: 100vh;
-  width: 275px;
+  width: 55px;
   position: fixed;
   left: 0;
   padding-top: 150px;
   z-index: 99;
-  display: grid;
-  grid-template-rows: 1fr;
-  -webkit-box-shadow: 55px 0 #323A4B inset;
-          box-shadow: 55px 0 #323A4B inset;
 }
 
-#nav_container div {
+nav .nav_iconbar .icon_nav {
+  color: #fff;
+  width: 100%;
   height: 55px;
 }
 
-#nav_container div .icon_nav,
-#nav_container div .text_nav {
-  color: #8f8f8f;
-  cursor: pointer;
+nav .nav_labelsbar {
+  width: 192.5px;
+  background: #282e3c;
+  height: 100vh;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  padding-top: 150px;
+  z-index: 98;
+  -webkit-transition: left .5s;
+  transition: left .5s;
 }
 
-#nav_container div .icon_nav {
-  background: #323A4B;
-  width: 20%;
-  font-size: 20px;
+nav .nav_labelsbar .label_nav {
+  width: 100%;
+  height: 55px;
+  margin-left: 10px;
+  color: #fff;
 }
 
-#nav_container div .icon_nav i {
-  font-size: 13px;
-}
-
-#nav_container div .text_nav {
-  height: 100%;
-  width: 80%;
-  background: #384154;
-  font-size: 17px;
-  padding-left: 20px;
-}
-
-#nav_container div:hover div {
-  color: #F3F7FA;
+nav:hover .nav_labelsbar {
+  left: 55px;
 }
 
 #main_content {

@@ -1,55 +1,48 @@
 @import "variables";
 @import "mixins";
 
-$espaio_icono: 55px;
+$espacio_icono: 55px;
 
 nav{
-  background: lighten($deepblue, 3%);
-  height: 100vh;
-  width: $espaio_icono * 5;
-  position: fixed;
-  left: 0;
-  padding-top: $header_height;
-  z-index: 99;
-  display: grid;
-  grid-template-rows: 1fr;
-  box-shadow: $espaio_icono 0 $deepblue inset;
-}
-
-#nav_container{
-  div{
-    height: $espaio_icono;
-
-    *{
-      // border: 1px solid $red;
-    }
-
-    .icon_nav,
-    .text_nav{
-      color: #8f8f8f;
-      cursor: pointer;
-    }
+  .nav_iconbar{
+    background: darken($deepblue, 10%);
+    height: 100vh;
+    width: $espacio_icono;
+    position: fixed;
+    left: 0;
+    padding-top: $header_height;
+    z-index: 99;
 
     .icon_nav{
-      background: $deepblue;
-      width: 20%;
-      font-size: 20px;
-
-      i{
-        font-size: 13px;
-      }
+      color: #fff;
+      width: 100%;
+      height: $espacio_icono;
     }
+  }
 
-    .text_nav{
-      height: 100%;
-      width: 80%;
-      background: lighten($deepblue, 3%);
-      font-size: 17px;
-      padding-left: 20px;
+  .nav_labelsbar{
+    width: $espacio_icono * 3.5;
+    background: darken($deepblue, 5%);
+    height: 100vh;
+    position: fixed;
+    // left: $espacio_icono;
+    left: -100%;
+    top: 0;
+    padding-top: $header_height;
+    z-index: 98;
+    transition: left .5s;
+
+    .label_nav{
+      width: 100%;
+      height: $espacio_icono;
+      margin-left: 10px;
+      color: #fff;
     }
+  }
 
-    &:hover div{
-      color: $white;;
+  &:hover{
+    .nav_labelsbar{
+      left: $espacio_icono;
     }
   }
 }
