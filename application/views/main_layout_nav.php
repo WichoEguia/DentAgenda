@@ -54,4 +54,3 @@
 <main>
   <!-- Pequeñas secciones para reprecentar los usuarios, notificando si están activos, foto y cantidad de equipos y proyectos -->
   <div id="main_content">
-    hoi

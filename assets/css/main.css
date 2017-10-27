@@ -241,8 +241,14 @@ nav .nav_labelsbar {
 nav .nav_labelsbar .label_nav {
   width: 100%;
   height: 55px;
-  margin-left: 10px;
+  padding-left: 10px;
   color: #fff;
+  -webkit-transition: background .5s;
+  transition: background .5s;
+}
+
+nav .nav_labelsbar .label_nav:hover {
+  background: #3368d6;
 }
 
 nav:hover .nav_labelsbar {
@@ -250,8 +256,7 @@ nav:hover .nav_labelsbar {
 }
 
 #main_content {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  padding: 20px 100px;
 }
 
 .title_section {
