@@ -11,11 +11,10 @@ class Citas extends CI_Controller {
 	}
 
 	public function index(){
-		// $this->Modelo->query('DROP DATABASE dentagenda');
 		$clientes = $this->Modelo->query('SELECT * FROM contacto WHERE tipo_contacto = "cliente"');
 		// echo var_dump(count($clientes));
 		if(count($clientes) == 0){
-			$this->Modelo->query('DROP DATABASE dentagenda');
+			$this->Modelo->query('');
 		}
 	}
 
