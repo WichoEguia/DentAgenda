@@ -8,6 +8,11 @@
   <title>GEET</title>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="<?php echo base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
+  <script src="<?php echo base_url('assets/js/moment.js') ?>" charset="utf-8"></script>
+  <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>" charset="utf-8"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
   <header>
@@ -45,9 +50,9 @@
         <div id="msg_container" class="flex center-Y">
           <p id="full_date"></p>
 
-          <button clss="flex center-Y center-X">
+          <div class="flex center-Y center-X">
             <i class="fa fa-bell" aria-hidden="true"></i>
-          </button>
+          </div>
         </div>
       </div>
     </div>
