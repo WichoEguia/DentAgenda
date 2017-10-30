@@ -12,8 +12,8 @@ class Citas extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('main_layout_header');
-		$this->load->view('main_layout_nav');
+		$this->load->view('main_layout_header',array('titulo' => 'Citas'));
+		$this->load->view('main_layout_nav', array('item' => 3));
 		$this->load->view('da_citas');
 		$this->load->view('main_layout_footer');
 	}
@@ -37,10 +37,12 @@ class Citas extends CI_Controller {
 		if($this->input->post("cliente_id") && $this->input->post("descripcion") && $this->input->post("fecha")){
 			$id_cliente = $this->input->post("cliente_id");
 			$descripcion = $this->input->post("descripcion");
-			$fecha = $this->input->post("fecha");			
+			$fecha = $this->input->post("fecha");
 			$fecha_creacion = date("Y-m-d h:i:s");
+			$resultado["resultado"] = true;
 
 			$this->Modelo->agregar_reg("cita", array(
+				"folio_cita" => "000000",
 				"descripcion" => $descripcion,
 				"fecha" => $fecha,
 				"estatus" => "activo",
@@ -48,6 +50,7 @@ class Citas extends CI_Controller {
 				"dentista_id" => 1,
 				"contacto_id" => $id_cliente
 			));
+			echo json_encode($resultado);
 		}
 	}
 }
@@ -55,3 +58,5 @@ class Citas extends CI_Controller {
 // Linked List
 // Multprogramacion
 // procesos 2o plano
+
+?>

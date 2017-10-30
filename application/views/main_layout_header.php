@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   <script src="<?php echo base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/moment.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>" charset="utf-8"></script>
@@ -24,7 +24,7 @@
           <div id="logo_image">
             <img src="https://bluerobotics.com/images/br-logo-trans-blue-trans-sm-updated.png" alt="">
           </div>
-          <p>GEET</p>
+          <p>DentAgenda</p>
         </div>
       </div>
 
@@ -46,6 +46,7 @@
             <input type="text" placeholder="Buscar equipos y personas">
           </div>
         </div> -->
+        <p id="titulo_vista"><?php echo isset($titulo) ? $titulo : '' ?></p>
       </div>
       <div class="section_actionbar right">
         <div id="msg_container" class="flex center-Y">

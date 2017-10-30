@@ -5,19 +5,23 @@
     </div>
 
     <a href="<?php echo base_url() ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-id-card-o" aria-hidden="true"></i>
+      <i class="fa fa-id-card-o" aria-hidden="true" style="<?php echo $item == 1 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
 
-    <a href="<?php echo base_url() ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-address-book-o" aria-hidden="true"></i>
+    <a href="<?php echo base_url('index.php/Contactos') ?>" class="icon_nav flex center-X center-Y">
+      <i class="fa fa-address-book-o" aria-hidden="true" style="<?php echo $item == 2 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
 
     <a href="<?php echo base_url('index.php/Citas') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-plus" aria-hidden="true"></i>
+      <i class="fa fa-plus" aria-hidden="true" style="<?php echo $item == 3 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
 
-    <a href="<?php echo base_url() ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-list" aria-hidden="true"></i>
+    <a href="<?php echo base_url('index.php/Inventario') ?>" class="icon_nav flex center-X center-Y">
+      <i class="fa fa-list" aria-hidden="true" style="<?php echo $item == 4 ? 'color: #3368d6' : 'color: white' ?>"></i>
+    </a>
+
+    <a href="<?php echo base_url('index.php/Agenda') ?>" class="icon_nav flex center-X center-Y">
+      <i class="fa fa-calendar" aria-hidden="true" style="<?php echo $item == 5 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
   </div>
 
@@ -30,7 +34,7 @@
       <p class="label_nav flex center-Y">Cuenta</p>
     </a>
 
-    <a href="<?php echo base_url() ?>" class="text_nav flex center-Y">
+    <a href="<?php echo base_url('index.php/Contactos') ?>" class="text_nav flex center-Y">
       <p class="label_nav flex center-Y">Contactos</p>
     </a>
 
@@ -38,8 +42,12 @@
       <p class="label_nav flex center-Y">Citas</p>
     </a>
 
-    <a href="<?php echo base_url() ?>" class="text_nav flex center-Y">
+    <a href="<?php echo base_url('index.php/Inventario') ?>" class="text_nav flex center-Y">
       <p class="label_nav flex center-Y">Inventario</p>
+    </a>
+
+    <a href="<?php echo base_url('index.php/Agenda') ?>" class="text_nav flex center-Y">
+      <p class="label_nav flex center-Y">Agenda</p>
     </a>
   </div>
 </nav>

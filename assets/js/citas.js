@@ -53,9 +53,20 @@ function Citas(){
             "descripcion" : $("#cita_descripcion").val(),
             "fecha" : $("#fecha_cita").val()
           }
-      }).done(function(data){});
+      }).done(function(data){
+        var data = JSON.parse(data);
+        if(data.resultado){
+          swal("Todo correcto","Los datos fueron enviados correctamente.","success").then(function(){
+            $("#select_cliente").val("");
+            $("#cita_descripcion").val("");
+            $("#fecha_cita").val("");
+          });
+        }else{
+          swal("Error al enviar el formulario","Intentalo nuevamente más tarde.","error");
+        }
+      });
     }else{
-      swal("No se puede enviar el formulario","Asegurate de llenar todos los campos para continuar","error");
+      swal("No se puede enviar el formulario","Asegurate de llenar todos los campos para continuar.","error");
     }
   }
 }
