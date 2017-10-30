@@ -39,5 +39,29 @@ button{
 
   &.enviar{
     background: $blue;
+
+    &::after{
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      margin-left: 10px;
+    }
+  }
+}
+
+.input_icono{
+  background: #fff;
+  border: .5px solid lighten($gray, 30%);
+  padding: 5px;
+  border-radius: 5px;
+  display: table;
+
+  i{
+    margin: 0 10px 0 5px;
+    color: darken($gray,20%);
+  }
+
+  input{
+    border: 0;
+    padding: 0;
   }
 }

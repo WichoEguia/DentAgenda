@@ -35,14 +35,14 @@ nav{
     z-index: 98;
     transition: left .5s;
 
-    .label_nav{
+    .text_nav{
       width: 100%;
       height: $espacio_icono;
       padding-left: 10px;
       color: #fff;
       transition: background .5s;
 
-      &:hover{
+      &:not(.first_label_nav):hover{
         background: $blue;
       }
     }

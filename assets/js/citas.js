@@ -1,7 +1,7 @@
 function Citas(){
   var base_url = "";
 
-  this.eventos = function(){
+  this.eventos_ = function(){
     eventos();
   }
 
@@ -10,7 +10,11 @@ function Citas(){
   }
 
   var eventos = function(){
+    $("#enviar_cita").off();
 
+    $("#enviar_cita").click(function(){
+      enivia_formulario();
+    });
   }
 
   this.obtener_clientes = function(){
@@ -27,7 +31,7 @@ function Citas(){
       if(data.resultado){
         for (var i = 0; i < data.clientes.length; i++) {
           var cliente = data.clientes[i];
-          c += "<option = '" + cliente.idcontacto + "'>" + cliente.folio + " - " + cliente.nombre + "</option>";
+          c += "<option value = '" + cliente.idcontacto + "'>" + cliente.folio + " - " + cliente.nombre + "</option>";
         }
         $("#select_cliente").html(c);
       }else{
@@ -36,5 +40,22 @@ function Citas(){
         });
       }
     });
+  }
+
+  var enivia_formulario = function(){
+    if($("#select_cliente").val() != "" && $("#cita_descripcion").val() != "" && $("#fecha_cita").val() != ""){
+      $.ajax({
+          method : "POST",
+          url : base_url + "index.php/Citas/crear_nueva_cita",
+          async : true,
+          data : {
+            "cliente_id" : $("#select_cliente").val(),
+            "descripcion" : $("#cita_descripcion").val(),
+            "fecha" : $("#fecha_cita").val()
+          }
+      }).done(function(data){});
+    }else{
+      swal("No se puede enviar el formulario","Asegurate de llenar todos los campos para continuar","error");
+    }
   }
 }

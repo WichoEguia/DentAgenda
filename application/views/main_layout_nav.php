@@ -22,7 +22,7 @@
   </div>
 
   <div class="nav_labelsbar">
-    <div class="text_nav flex center-Y">
+    <div class="first_label_nav text_nav flex center-Y">
       <p class="label_nav flex center-Y"></p>
     </div>
 

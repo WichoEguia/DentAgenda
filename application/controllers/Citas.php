@@ -30,6 +30,26 @@ class Citas extends CI_Controller {
 
 		echo json_encode($resultado);
 	}
+
+	public function crear_nueva_cita(){
+		$resultado["resultado"] = false;
+
+		if($this->input->post("cliente_id") && $this->input->post("descripcion") && $this->input->post("fecha")){
+			$id_cliente = $this->input->post("cliente_id");
+			$descripcion = $this->input->post("descripcion");
+			$fecha = $this->input->post("fecha");			
+			$fecha_creacion = date("Y-m-d h:i:s");
+
+			$this->Modelo->agregar_reg("cita", array(
+				"descripcion" => $descripcion,
+				"fecha" => $fecha,
+				"estatus" => "activo",
+				"fecha_creacion" => $fecha_creacion,
+				"dentista_id" => 1,
+				"contacto_id" => $id_cliente
+			));
+		}
+	}
 }
 
 // Linked List

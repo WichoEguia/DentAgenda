@@ -8,5 +8,9 @@
       $query = $this->db->query($cadena);
       return $query->result();
     }
+
+    public function agregar_reg($tabla, $datos){
+      $this->db->insert($tabla,$datos);
+    }
   }
 ?>
