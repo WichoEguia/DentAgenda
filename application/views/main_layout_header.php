@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>GEET</title>
+  <!-- TODO: Descargar todas las dependencias -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -18,7 +19,6 @@
 <body>
   <header>
     <div id="appdata">
-      <!-- Logo e imagen de usuario -->
       <div id="logo" class="flex center-Y center-X">
         <div id="logo_container" class="flex center-Y">
           <div id="logo_image">

@@ -29,5 +29,17 @@
       }
       echo json_encode($resultado);
     }
+
+    public function eliminar_cita(){
+      $resultado["resultado"] = false;
+
+      if($this->input->post("cita_id")){
+        $resultado["resultado"] = true;
+        $idcita = $this->input->post("cita_id");
+        $this->Modelo->query_no_result("DELETE FROM cita WHERE idcita = " . $idcita);
+      }
+
+      echo json_encode($resultado);
+    }
   }
 ?>

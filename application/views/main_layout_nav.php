@@ -39,7 +39,7 @@
     </a>
 
     <a href="<?php echo base_url('index.php/Citas') ?>" class="text_nav flex center-Y">
-      <p class="label_nav flex center-Y">Citas</p>
+      <p class="label_nav flex center-Y">Crear citas</p>
     </a>
 
     <a href="<?php echo base_url('index.php/Inventario') ?>" class="text_nav flex center-Y">
