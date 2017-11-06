@@ -1,6 +1,29 @@
 function Layout(){
+  var base_url = "";
+
+  this.setUrl = function(url){
+    base_url = url;
+  }
+
   this.hora_fecha = function(){
     setInterval(hora_fecha, 500);
+  }
+
+  this.ev = function(){
+    eventos();
+  }
+
+  var eventos = function(){
+    $("#user_session_options").off();
+    $("#cerrar_sesion").off();
+
+    $("#user_session_options").click(function(){
+      $("#opciones_usuario").toggleClass("activo");
+    });
+
+    $("#cerrar_sesion").click(function(){
+      window.location.href = base_url + "index.php/Login/salir";
+    })
   }
 
   var hora_fecha = function(){

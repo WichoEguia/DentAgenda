@@ -4,9 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
+
 		$this->load->helper('url');
     $this->load->library("session");
     $this->load->model("Modelo");
+
+		if($this->session->userdata("iddentista") != NULL){
+			header("Location: " . base_url("index.php/Perfil"));
+		}
 	}
 
 	public function sign_up(){
@@ -75,5 +80,10 @@ class Login extends CI_Controller {
 
     echo json_encode($resultado);
   }
+
+	public function salir(){
+		$this->session->unset_userdata(array("iddentista","email","nombre"));
+		header("Location: " . base_url("index.php/Login/sign_in"));
+	}
 }
 ?>

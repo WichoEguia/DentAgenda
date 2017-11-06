@@ -58,4 +58,10 @@
         </div>
       </div>
     </div>
+    <div id="opciones_usuario" class="">
+      <ul>
+        <li>Editar perfil</li>
+        <li id="cerrar_sesion">Cerrar sesion</li>
+      </ul>
+    </div>
   </header>

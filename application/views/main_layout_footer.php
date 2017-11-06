@@ -6,7 +6,9 @@
     var base_url = "<?php echo base_url() ?>";
 
     var layout = new Layout();
+    layout.setUrl(base_url);
     layout.hora_fecha();
+    layout.ev();
   </script>
 </body>
 </html>

@@ -43,6 +43,7 @@ header{
 
   #user_session_options{
     height: 100%;
+    cursor: pointer;
 
     #profile_photo_container{
       height: 100%;
@@ -131,4 +132,35 @@ header{
 #titulo_vista{
   font-size: 22px;
   color: darken($gray,30%);
+}
+
+#opciones_usuario{
+  background: #fff;
+  @include shadow(2);
+  border-radius: 3px;
+  width: 170px;
+  position: absolute;
+  right: 20px;
+  top: $header_height / 2;
+  display: none;
+  transition: all .3s;
+
+  &.activo{
+    display: block;
+    transition: all .3s;
+  }
+
+  ul{
+    list-style: none;
+    color: $gray;
+
+    li{
+      padding: 5px;
+      cursor: pointer;
+
+      &:hover{
+        color: $blue;
+      }
+    }
+  }
 }
