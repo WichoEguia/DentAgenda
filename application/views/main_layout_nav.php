@@ -4,7 +4,7 @@
       <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
 
-    <a href="<?php echo base_url() ?>" class="icon_nav flex center-X center-Y">
+    <a href="<?php echo base_url('index.php/Perfil') ?>" class="icon_nav flex center-X center-Y">
       <i class="fa fa-id-card-o" aria-hidden="true" style="<?php echo $item == 1 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
 
@@ -30,8 +30,8 @@
       <p class="label_nav flex center-Y"></p>
     </div>
 
-    <a href="<?php echo base_url('index.php/Cuenta') ?>" class="text_nav flex center-Y">
-      <p class="label_nav flex center-Y">Cuenta</p>
+    <a href="<?php echo base_url('index.php/Perfil') ?>" class="text_nav flex center-Y">
+      <p class="label_nav flex center-Y">Perfil</p>
     </a>
 
     <a href="<?php echo base_url('index.php/Contactos') ?>" class="text_nav flex center-Y">
