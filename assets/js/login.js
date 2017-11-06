@@ -156,7 +156,7 @@ function Login(){
     });
   }
 
-  var valida_datos_inicio = function(email,password){
+  var valida_datos_inicio = function(email, password){
     var res_e = false;
     var res_p = false;
     var res = false;
