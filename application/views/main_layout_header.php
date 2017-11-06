@@ -60,8 +60,14 @@
     </div>
     <div id="opciones_usuario" class="">
       <ul>
-        <li>Editar perfil</li>
-        <li id="cerrar_sesion">Cerrar sesion</li>
+        <li>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          Editar perfil
+        </li>
+        <li id="cerrar_sesion">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          Cerrar sesion
+        </li>
       </ul>
     </div>
   </header>
