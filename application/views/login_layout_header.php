@@ -5,12 +5,14 @@
     <title>DentAgenda</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <script src="<?php echo base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
     <script src="<?php echo base_url('assets/js/moment.js') ?>" charset="utf-8"></script>
-    <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>" charset="utf-8"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="<?php echo base_url('assets/js/sweetalert.js') ?>"></script>
   </head>
   <body>
-    <div class="login_main_container">
+    <div id="login_main_container" class="flex center-X center-Y">
+      <div class="formulario_login">
+        <div class="logo_login flex center-X center-Y">
+          <img src="<?php echo base_url("assets/img/logo_da.png") ?>" alt="Logo DentAgenda">
+        </div>

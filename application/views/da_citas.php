@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<button id="enviar_cita" class="enviar" type="button" name="button">Crear</button>
+<button id="enviar_cita" class="success" type="button" name="button">Crear</button>
 
 <script src="<?php echo base_url("assets/js/citas.js") ?>" charset="utf-8"></script>
 <script type="text/javascript">

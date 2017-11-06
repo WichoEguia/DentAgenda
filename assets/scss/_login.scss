@@ -1,0 +1,61 @@
+@import "variables";
+@import "mixins";
+
+#login_main_container{
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0 200px 0 $deepblue;
+}
+
+.formulario_login{
+  position: relative;
+  background: #fff;
+  @include shadow(2);
+  padding: 40px;
+  display: table;
+  padding: auto;
+}
+
+.field_login{
+  margin: 20px 0;
+}
+
+.titulo_login{
+  color: $blue;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.boton_alargado{
+  width: 100%;
+
+  &.login{
+    // background: $green;
+
+    &::after{
+      content: "\f061";
+      font-family: "FontAwesome";
+    }
+  }
+}
+
+.logo_login{
+  padding: 10px;
+  @include shadow(1);
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  top: -40px;
+  right: -40px;
+  margin: 0 auto;
+
+  img{
+    width: 80px;
+    height: auto;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: $green;
+}

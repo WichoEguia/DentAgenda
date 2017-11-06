@@ -156,7 +156,7 @@ function Login(){
     });
   }
 
-  var valida_datos_inicio = function(email, password){
+  var valida_datos_inicio = function(email,password){
     var res_e = false;
     var res_p = false;
     var res = false;
@@ -164,9 +164,6 @@ function Login(){
     if(email != ""){
       res_e = true;
     }else{
-      $("input").css({
-        "border" : "0.5px solid #e3e3e5"
-      });
       $("#signin_email").css({
         "border" : "0.5px solid red"
       });
@@ -175,9 +172,6 @@ function Login(){
     if(password != ""){
       res_p = true;
     }else{
-      $("input").css({
-        "border" : "0.5px solid #e3e3e5"
-      });
       $("#signin_password").css({
         "border" : "0.5px solid red"
       });

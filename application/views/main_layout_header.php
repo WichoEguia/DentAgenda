@@ -9,12 +9,12 @@
   <!-- TODO: Descargar todas las dependencias -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.css') ?>">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   <script src="<?php echo base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/moment.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>" charset="utf-8"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="<?php echo base_url('assets/js/sweetalert.js') ?>"></script>
 </head>
 <body>
   <header>
@@ -22,7 +22,7 @@
       <div id="logo" class="flex center-Y center-X">
         <div id="logo_container" class="flex center-Y">
           <div id="logo_image">
-            <img src="https://bluerobotics.com/images/br-logo-trans-blue-trans-sm-updated.png" alt="">
+            <img src="<?php echo base_url("assets/img/logo_da.png") ?>" alt="Logo DentAgenda">
           </div>
           <p>DentAgenda</p>
         </div>
@@ -31,7 +31,7 @@
       <div id="user_session_options" class="flex center-Y center-X">
         <div id="profile_photo_container" class="flex center-Y">
           <div id="profile_photo" class="flex center-Y">
-            <img src="https://www.shitpostbot.com/img/sourceimages/happy-doggo-57b1df2fb27db.jpeg">
+            <img src="<?php echo base_url("assets/img/dogo_da.jpeg") ?>"  alt="Imagen de perfil">
           </div>
           <p>▼</p>
         </div>

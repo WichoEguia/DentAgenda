@@ -1,20 +1,15 @@
-<div class="field">
-  <label for="signin_email">Correo electronico</label>
+<p class="titulo_login">Entrar</p>
+
+<div class="field field_login">
+  <label for="signin_email">Correo electronico</label><br>
   <input type="email" name="signin_email" id="signin_email">
 </div>
 
-<div class="field">
-  <label for="signin_password">Contraseña</label>
+<div class="field field_login">
+  <label for="signin_password">Contraseña</label><br>
   <input type="password" name="signin_password" id="signin_password">
 </div>
 
-<button id="inicar_sesion" class="enviar" type="button" name="button">Entrar</button>
+<button id="inicar_sesion" class="success boton_alargado login" type="button" name="button">Entrar</button>
 
-<script src="<?php echo base_url('assets/js/login.js') ?>" charset="utf-8"></script>
-<script type="text/javascript">
-  var url = "<?php echo base_url() ?>";
-
-  var login = new Login();
-  login.setUrl(url);
-  login.ev();
-</script>
+<a href="<?php echo base_url("index.php/Login/sign_up") ?>">Registrarse</a>
