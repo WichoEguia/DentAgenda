@@ -36,7 +36,7 @@ function Citas(){
         $("#select_cliente").html(c);
       }else{
         swal("UPS...","No tienes registrado ningún usuario aún.","warning").then(function(){
-          window.location.href = base_url + "index.php/Cuenta";
+          window.location.href = base_url + "index.php/Perfil";
         });
       }
     });
@@ -51,7 +51,7 @@ function Citas(){
           data : {
             "cliente_id" : $("#select_cliente").val(),
             "descripcion" : $("#cita_descripcion").val(),
-            "fecha" : $("#fecha_cita").val()
+            "fecha" : $("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val())
           }
       }).done(function(data){
         var data = JSON.parse(data);
@@ -60,6 +60,7 @@ function Citas(){
             $("#select_cliente").val("");
             $("#cita_descripcion").val("");
             $("#fecha_cita").val("");
+            $("#hora_cita").val("");
           });
         }else{
           swal("Error al enviar el formulario","Intentalo nuevamente más tarde.","error");
@@ -68,5 +69,10 @@ function Citas(){
     }else{
       swal("No se puede enviar el formulario","Asegurate de llenar todos los campos para continuar.","error");
     }
+  }
+
+  var convertir_ampm_24 = function(time){
+    var time = moment(time, ["h:mm A"]).format("HH:mm");
+    return time;
   }
 }

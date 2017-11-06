@@ -24,7 +24,8 @@
     public function traer_eventos(){
       $resultado["resultado"] = false;
       $hoy = date("Y-m-d h:i:s");
-      $citas = $this->Modelo->query("SELECT * FROM cita JOIN contacto ON (cita.contacto_id = contacto.idcontacto) WHERE cita.dentista_id = 1 AND cita.fecha > '" . $hoy . "' ORDER BY cita.fecha_creacion ASC");
+      $dentista_id = $this->session->userdata("iddentista");
+      $citas = $this->Modelo->query("SELECT * FROM cita JOIN contacto ON (cita.contacto_id = contacto.idcontacto) WHERE cita.dentista_id = '" . $dentista_id . "' AND cita.fecha > '" . $hoy . "' ORDER BY cita.fecha_creacion ASC");
       // echo var_dump($citas);
 
       if(count($citas) > 0){

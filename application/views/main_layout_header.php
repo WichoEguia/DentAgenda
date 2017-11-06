@@ -10,11 +10,13 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/js/wickedpicker/stylesheets/wickedpicker.css') ?>">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   <script src="<?php echo base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/moment.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/sweetalert.js') ?>"></script>
+  <script src="<?php echo base_url('assets/js/wickedpicker/src/wickedpicker.js') ?>" charset="utf-8"></script>
 </head>
 <body>
   <header>

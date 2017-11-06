@@ -15,7 +15,7 @@ class Citas extends CI_Controller {
 		}
 	}
 
-	public function index(){
+	public function nueva_cita(){
 		$this->load->view('main_layout_header',array('titulo' => 'Citas'));
 		$this->load->view('main_layout_nav', array('item' => 3));
 		$this->load->view('da_citas');
@@ -24,7 +24,8 @@ class Citas extends CI_Controller {
 
 	public function obtener_clientes(){
 		$resultado["resultado"] = false;
-		$clientes = $this->Modelo->query("SELECT * FROM contacto WHERE dentista_id = 1 AND tipo_contacto = 'cliente' AND estatus = 'activo'");
+		$dentista_id = $this->session->userdata("iddentista");
+		$clientes = $this->Modelo->query("SELECT * FROM contacto WHERE dentista_id = '" . $dentista_id . "' AND tipo_contacto = 'cliente' AND estatus = 'activo'");
 		// echo var_dump($clientes);
 
 		if(count($clientes) > 0){
@@ -51,7 +52,7 @@ class Citas extends CI_Controller {
 				"fecha" => $fecha,
 				"estatus" => "activo",
 				"fecha_creacion" => $fecha_creacion,
-				"dentista_id" => 1,
+				"dentista_id" => $this->session->userdata("iddentista"),
 				"contacto_id" => $id_cliente
 			));
 			echo json_encode($resultado);

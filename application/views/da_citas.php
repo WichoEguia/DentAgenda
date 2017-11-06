@@ -12,9 +12,16 @@
 
 <div class="field">
   <label for="cita_fecha">Fecha y hora de cita</label><br>
-  <div class="input_icono">
-    <i class="fa fa-calendar"></i>
-    <input type="text" id="fecha_cita" placeholder="seleccionar fecha">
+  <div class="flex">
+    <div class="input_icono">
+      <i class="fa fa-calendar"></i>
+      <input type="text" id="fecha_cita" placeholder="seleccionar fecha">
+    </div>
+
+    <div style="margin-left: 10px;" class="input_icono">
+      <i class="fa fa-clock-o"></i>
+      <input type="text" id="hora_cita" placeholder="seleccionar hora">
+    </div>
   </div>
 </div>
 
@@ -32,6 +39,11 @@
 
     $("#fecha_cita").datepicker({
       dateFormat: 'yy-mm-dd'
+    });
+
+    $("#hora_cita").wickedpicker({
+      // twentyFour: true,
+      title: "Selecciona hora"
     });
   });
 </script>

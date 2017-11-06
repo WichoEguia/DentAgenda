@@ -12,7 +12,7 @@
       <i class="fa fa-address-book-o" aria-hidden="true" style="<?php echo $item == 2 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
 
-    <a href="<?php echo base_url('index.php/Citas') ?>" class="icon_nav flex center-X center-Y">
+    <a href="<?php echo base_url('index.php/Citas/nueva_cita') ?>" class="icon_nav flex center-X center-Y">
       <i class="fa fa-plus" aria-hidden="true" style="<?php echo $item == 3 ? 'color: #3368d6' : 'color: white' ?>"></i>
     </a>
 
@@ -38,8 +38,8 @@
       <p class="label_nav flex center-Y">Contactos</p>
     </a>
 
-    <a href="<?php echo base_url('index.php/Citas') ?>" class="text_nav flex center-Y">
-      <p class="label_nav flex center-Y">Crear citas</p>
+    <a href="<?php echo base_url('index.php/Citas/nueva_cita') ?>" class="text_nav flex center-Y">
+      <p class="label_nav flex center-Y">Crear cita</p>
     </a>
 
     <a href="<?php echo base_url('index.php/Inventario') ?>" class="text_nav flex center-Y">
