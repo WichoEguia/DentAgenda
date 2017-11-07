@@ -1,0 +1,18 @@
+@import "variables";
+@import "mixins";
+
+#contacto_container div{
+  flex: 1;
+}
+
+#field_alergias_contacto{
+  display: none;
+
+  &.activo{
+    display: block;
+  }
+}
+
+.campo_error{
+  border: 0.5px solid $red !important;
+}

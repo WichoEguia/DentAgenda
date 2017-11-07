@@ -35,7 +35,7 @@ function Citas(){
         }
         $("#select_cliente").html(c);
       }else{
-        swal("UPS...","No tienes registrado ningún usuario aún.","warning").then(function(){
+        swal("UPS...","No tienes registrado ningún contacto aún.","warning").then(function(){
           window.location.href = base_url + "index.php/Perfil";
         });
       }

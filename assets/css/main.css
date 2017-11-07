@@ -444,6 +444,24 @@ a {
   color: #32d05e;
 }
 
+#contacto_container div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#field_alergias_contacto {
+  display: none;
+}
+
+#field_alergias_contacto.activo {
+  display: block;
+}
+
+.campo_error {
+  border: 0.5px solid #EE4040 !important;
+}
+
 main {
   grid-row: 2;
   grid-column: 2 / span 2;

@@ -1,7 +1,7 @@
 <h2 class="">Crear cita</h2>
 
 <div class="field">
-  <label for="cita_cliente">Nombre del cliente</label><br>
+  <label for="cita_cliente">Nombre del paciente</label><br>
   <select id="select_cliente" name="cita_cliente"></select>
 </div>
 

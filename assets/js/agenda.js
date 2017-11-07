@@ -44,7 +44,7 @@ function Agenda(){
       if(data.resultado){
         crear_eventos_vista(data.citas);
       }else{
-        swal("Ups...","Aún no tienes ninguna cita programada.","warning");
+        swal("Ups...","Aún no tienes ningun elemento en tu agenda.","warning");
       }
     });
   }
