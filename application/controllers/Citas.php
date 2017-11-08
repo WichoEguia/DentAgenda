@@ -62,8 +62,21 @@ class Citas extends CI_Controller {
 				"dentista_id" => $this->session->userdata("iddentista"),
 				"contacto_id" => $id_cliente
 			));
-			echo json_encode($resultado);
 		}
+		echo json_encode($resultado);
+	}
+
+	public function obtener_foto_perfil(){
+		$resultado["resultad"] = false;
+		$idcontacto = $this->input->post("idcontacto");
+
+		$contacto = $this->Modelo->query("SELECT * FROM contacto WHERE idcontacto = " . $idcontacto);
+		if(count($contacto) > 0){
+			$resultado["resultado"] = true;
+			$resultado["path_foto"] = $contacto[0]->foto;
+		}
+
+		echo json_encode($resultado);
 	}
 }
 

@@ -11,9 +11,32 @@ function Citas(){
 
   var eventos = function(){
     $("#enviar_cita").off();
+    $("#select_cliente").off();
 
     $("#enviar_cita").click(function(){
       enivia_formulario();
+    });
+
+    $("#select_cliente").change(function(){
+      var idcontacto = $(this).val();
+
+      $.ajax({
+          method : "POST",
+          url : base_url + "index.php/Citas/obtener_foto_perfil",
+          async : true,
+          data : {
+            idcontacto : idcontacto
+          }
+      }).done(function(data){
+        data = JSON.parse(data);
+        if(data.resultado){
+          console.log(data.path_foto);
+          if(data.path_foto != null){
+            c = '<img style="width:300px;height:300px;" src="' + data.path_foto + '">';
+            $("#foto_contacto").html(c);
+          }
+        }
+      });
     });
   }
 
