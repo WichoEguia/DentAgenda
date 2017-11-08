@@ -51,10 +51,10 @@ function Citas(){
           data : {
             "cliente_id" : $("#select_cliente").val(),
             "descripcion" : $("#cita_descripcion").val(),
-            "fecha" : $("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val())
+            "fecha" : $("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val()),
           }
       }).done(function(data){
-        var data = JSON.parse(data);
+        data = JSON.parse(data);
         if(data.resultado){
           swal("Todo correcto","Los datos fueron enviados correctamente.","success").then(function(){
             $("#select_cliente").val("");

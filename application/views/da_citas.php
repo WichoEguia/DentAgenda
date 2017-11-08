@@ -30,7 +30,7 @@
 <script src="<?php echo base_url("assets/js/citas.js") ?>" charset="utf-8"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-    var base_url = "<?php echo base_url(); ?>";
+    var base_url = "<?php echo base_url() ?>";
 
     var citas = new Citas();
     citas.eventos_();

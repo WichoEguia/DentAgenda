@@ -16,16 +16,23 @@ class Citas extends CI_Controller {
 	}
 
 	public function nueva_cita(){
-		$this->load->view('main_layout_header',array('titulo' => 'Citas'));
+		$this->load->view('main_layout_header',array('titulo' => 'Nueva Cita'));
 		$this->load->view('main_layout_nav', array('item' => 3));
 		$this->load->view('da_citas');
 		$this->load->view('main_layout_footer');
 	}
 
+	// public function editar_cita(){
+	// 	$this->load->view('main_layout_header',array('titulo' => 'Editar cita'));
+	// 	$this->load->view('main_layout_nav', array('item' => 3));
+	// 	$this->load->view('da_citas',array("citaid" => $this->input->post("cita_id")));
+	// 	$this->load->view('main_layout_footer');
+	// }
+
 	public function obtener_clientes(){
 		$resultado["resultado"] = false;
 		$dentista_id = $this->session->userdata("iddentista");
-		$clientes = $this->Modelo->query("SELECT * FROM contacto WHERE dentista_id = '" . $dentista_id . "' AND tipo_contacto = 'cliente' AND estatus = 'activo'");
+		$clientes = $this->Modelo->query("SELECT * FROM contacto WHERE dentista_id = '" . $dentista_id . "' AND estatus = 'activo'");
 		// echo var_dump($clientes);
 
 		if(count($clientes) > 0){
