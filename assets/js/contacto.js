@@ -23,7 +23,6 @@ function Contacto(){
     });
 
     $("#formulario_nuevo_contacto").submit(function(e){
-      e.preventDefault();
       var folio = $("#folio_contacto").val();
       var nombre = $("#nombre_contacto").val();
       var email = $("#email_contacto").val();
@@ -39,9 +38,8 @@ function Contacto(){
       var paso = valida_datos(folio,nombre,telefono,tipo,email,alergias,sexo);
 
       if(!paso){
+        e.preventDefault();
         swal("¡Cuidado!","Revisa todos los campos para continuar.","warning");
-      }else{
-        $(this).submit();
       }
     });
   }
