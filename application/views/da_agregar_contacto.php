@@ -1,4 +1,4 @@
-<?php echo form_open_multipart('Contactos/alta_contacto');?>
+<?php echo form_open_multipart('Contactos/alta_contacto',array("id"=>"formulario_nuevo_contacto"));?>
   <div id="contacto_container" class="flex">
     <div class="">
       <div class="field">
@@ -59,7 +59,7 @@
 
       <div class="field" id="field_foto_contacto">
         <label for="foto_contacto">Foto del contacto</label><br>
-        <input type="file" name="foto_contacto" id="foto_contacto">
+        <input type="file" name="foto_contacto" id="input_foto_contacto">
       </div>
     </div>
   </div>

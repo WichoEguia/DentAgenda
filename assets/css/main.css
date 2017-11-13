@@ -372,6 +372,16 @@ input[type="submit"].success::after {
   margin-left: 10px;
 }
 
+button.success:hover,
+input[type="submit"].success:hover {
+  background: #5d87df;
+}
+
+button.success:active,
+input[type="submit"].success:active {
+  background: #2452b2;
+}
+
 .input_icono {
   background: #fff;
   border: 0.5px solid #e3e3e5;

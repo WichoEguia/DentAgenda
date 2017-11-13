@@ -2,12 +2,12 @@
   <div class="">
     <div class="field">
       <label for="cita_cliente">Nombre del paciente</label><br>
-      <select id="select_cliente" name="cita_cliente"></select>
+      <select class="validable" id="select_cliente" name="cita_cliente"></select>
     </div>
 
     <div class="field">
       <label for="cita_descripcion">Descripción de la cita</label><br>
-      <textarea id="cita_descripcion" name="cita_descripcion" rows="5" cols="50"></textarea>
+      <textarea class="validable" id="cita_descripcion" name="cita_descripcion" rows="5" cols="50"></textarea>
     </div>
 
     <div class="field">
@@ -15,18 +15,18 @@
       <div class="flex">
         <div class="input_icono">
           <i class="fa fa-calendar"></i>
-          <input type="text" id="fecha_cita" placeholder="seleccionar fecha">
+          <input class="validable" type="text" id="fecha_cita" placeholder="seleccionar fecha">
         </div>
 
         <div style="margin-left: 10px;" class="input_icono">
           <i class="fa fa-clock-o"></i>
-          <input type="text" id="hora_cita" placeholder="seleccionar hora">
+          <input class="validable" type="text" id="hora_cita" placeholder="seleccionar hora">
         </div>
       </div>
     </div>
 
     <div class="field">
-      <label for="tiempo_estimado_cita">Tiempo estimado de cita</label><br>
+      <label for="tiempo_estimado_cita">Tiempo estimado de cita (hh:mm)</label><br>
       <input type="text" id="tiempo_estimado_cita" name="tiempo_estimado_cita">
     </div>
 

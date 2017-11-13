@@ -5,7 +5,7 @@
     </div>
 
     <a href="<?php echo base_url('index.php/Perfil') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-id-card-o" aria-hidden="true" style="<?php echo $item == 1 ? 'color: #3368d6' : 'color: white' ?>"></i>
+      <i class="fa fa-id-card-o" aria-hidden="true" style="<?php echo $item == 1 ? 'color:  ' : 'color: white' ?>"></i>
     </a>
 
     <a href="<?php echo base_url('index.php/Contactos') ?>" class="icon_nav flex center-X center-Y">

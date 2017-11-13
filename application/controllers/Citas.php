@@ -50,6 +50,7 @@ class Citas extends CI_Controller {
 			$id_cliente = $this->input->post("cliente_id");
 			$descripcion = $this->input->post("descripcion");
 			$fecha = $this->input->post("fecha");
+			$tiempo_estimado = $this->input->post("tiempo_estimado");
 			$fecha_creacion = date("Y-m-d h:i:s");
 			$resultado["resultado"] = true;
 
@@ -60,6 +61,7 @@ class Citas extends CI_Controller {
 				"estatus" => "activo",
 				"fecha_creacion" => $fecha_creacion,
 				"dentista_id" => $this->session->userdata("iddentista"),
+				"duracion" => $tiempo_estimado . "horas",
 				"contacto_id" => $id_cliente
 			));
 		}

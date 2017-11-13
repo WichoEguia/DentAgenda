@@ -10,7 +10,7 @@ function Contacto(){
   }
 
   var eventos = function(){
-    $("#crear_contacto").off();
+    $("#formulario_nuevo_contacto").off();
     $("#select_tipo_contacto").off();
 
     $("#select_tipo_contacto").change(function(){
@@ -22,7 +22,8 @@ function Contacto(){
       }
     });
 
-    $("#crear_contacto").click(function(){
+    $("#formulario_nuevo_contacto").submit(function(e){
+      e.preventDefault();
       var folio = $("#folio_contacto").val();
       var nombre = $("#nombre_contacto").val();
       var email = $("#email_contacto").val();
@@ -31,6 +32,7 @@ function Contacto(){
       var tipo = $("#select_tipo_contacto").val();
       var alergias = $("#alergias_contacto").val();
       var sexo = $("#select_sexo_contacto").val();
+      console.log("ggg");
 
       $("input,select").removeClass("campo_error");
 
@@ -38,9 +40,9 @@ function Contacto(){
 
       if(!paso){
         swal("¡Cuidado!","Revisa todos los campos para continuar.","warning");
+      }else{
+        $(this).submit();
       }
-
-      console.log(paso);
     });
   }
 

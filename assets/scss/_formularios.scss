@@ -46,6 +46,14 @@ input[type="submit"]{
       font-family: 'FontAwesome';
       margin-left: 10px;
     }
+
+    &:hover{
+      background: lighten($blue, 10%);
+    }
+
+    &:active{
+      background: darken($blue, 10%);
+    }
   }
 }
 
