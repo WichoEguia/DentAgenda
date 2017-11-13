@@ -13,7 +13,7 @@
 
 body {
   min-height: 100%;
-  background-color: #F3F7FA;
+  background-color: #f4f4f4;
   height: 100vh;
   display: grid;
   grid-template-columns: 55px 1fr;
@@ -105,7 +105,7 @@ header {
 
 #appdata #logo #logo_container p {
   margin-left: 10px;
-  color: #F3F7FA;
+  color: #f4f4f4;
   font-style: 25px;
 }
 
@@ -117,7 +117,7 @@ header {
 #appdata #user_session_options #profile_photo_container {
   height: 100%;
   margin-right: 30px;
-  color: #F3F7FA;
+  color: #f4f4f4;
 }
 
 #appdata #user_session_options #profile_photo_container p {
@@ -479,7 +479,7 @@ a {
 #foto_contacto {
   width: 150px;
   height: 150px;
-  background: #F3F7FA;
+  background: #f4f4f4;
   margin-left: 30px;
 }
 

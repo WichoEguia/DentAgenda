@@ -9,7 +9,7 @@ input[type="number"],
 input[type="time"],
 select,
 textarea{
-  border: .5px solid lighten($gray, 30%);
+  border: .5px solid lighten($gris, 30%);
   background: #fff;
   color: #4a4a4a;
   padding: 5px;
@@ -39,7 +39,7 @@ input[type="submit"]{
   }
 
   &.success{
-    background: $blue;
+    background: $color_secundario;
 
     &::after{
       content: '\f00c';
@@ -48,25 +48,25 @@ input[type="submit"]{
     }
 
     &:hover{
-      background: lighten($blue, 10%);
+      background: lighten($color_secundario, 10%);
     }
 
     &:active{
-      background: darken($blue, 10%);
+      background: darken($color_secundario, 10%);
     }
   }
 }
 
 .input_icono{
   background: #fff;
-  border: .5px solid lighten($gray, 30%);
+  border: .5px solid lighten($gris, 30%);
   padding: 5px;
   border-radius: 5px;
   display: table;
 
   i{
     margin: 0 10px 0 5px;
-    color: darken($gray,20%);
+    color: darken($gris,20%);
   }
 
   input{

@@ -2,7 +2,7 @@
 @import "mixins";
 
 header{
-  background: $deepblue;
+  background: $color_primario;
   height: $header_height;
   position: fixed;
   top: 0;
@@ -65,11 +65,11 @@ header{
         &:before{
           content: "";
           @include circle(15px);
-          background: $green;
+          background: $color_exito;
           position: absolute;
           right: -5px;
           bottom: 0;
-          border: 2px solid $deepblue;
+          border: 2px solid $color_primario;
         }
 
         img{border-radius: 50%;}
@@ -113,11 +113,11 @@ header{
   div{
     @include circle(40px);
     background: transparent;
-    border: 2px solid $gray;
+    border: 2px solid $gris;
     position: relative;
 
     i{
-      color: $gray;
+      color: $gris;
       font-size: 20px;
     }
   }
@@ -126,12 +126,12 @@ header{
 #full_date{
   font-size: 18px;
   margin-right: 20px;
-  color: $gray;
+  color: $gris;
 }
 
 #titulo_vista{
   font-size: 22px;
-  color: darken($gray,30%);
+  color: darken($gris,30%);
 }
 
 #opciones_usuario{
@@ -152,14 +152,14 @@ header{
 
   ul{
     list-style: none;
-    color: $gray;
+    color: $gris;
 
     li{
       padding: 5px;
       cursor: pointer;
 
       &:hover{
-        color: $blue;
+        color: $color_secundario;
       }
     }
   }
