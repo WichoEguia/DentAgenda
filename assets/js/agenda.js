@@ -13,9 +13,9 @@ function Agenda(){
     $(".eliminar_evento").off();
 
     $(".eliminar_evento").click(function(){
-      var idcita = $(this).parent().find(".idcita").val();
-      var idelemento = $(this).parent().attr("id");
-      // console.log(idcita);
+      var idcita = $(this).parent().parent().find(".idcita").val();
+      var idelemento = $(this).parent().parent().attr("id");
+      console.log(idcita);
       $.ajax({
           method : "POST",
           url : base_url + "index.php/Agenda/eliminar_cita",

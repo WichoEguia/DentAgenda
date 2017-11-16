@@ -19,6 +19,7 @@ class Contactos extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('main_layout_header', array('titulo' => 'Contactos'));
 		$this->load->view('main_layout_nav', array('item' => 2));
+		$this->load->view('da_ver_contacto');
 		$this->load->view('main_layout_footer');
 	}
 
@@ -72,6 +73,32 @@ class Contactos extends CI_Controller {
 		));
 
 		header("Location: " . base_url("index.php/Contactos/nuevo_contacto"));
+	}
+
+	public function obtener_contactos(){
+		$resultado["resultado"] = false;
+		$dentista_id = $this->session->userdata("iddentista");
+		$contactos = $this->Modelo->query("SELECT * FROM contacto WHERE dentista_id = " . $dentista_id . " AND estatus = 'activo'");
+
+		if(count($contactos) > 0){
+			$resultado["resultado"] = true;
+			$resultado["contactos"] = $contactos;
+		}
+
+		echo json_encode($resultado);
+	}
+
+	public function baja_contacto(){
+		$resultado["resultado"] = false;
+
+		if($this->input->post("contacto_id")){
+			$resultado["resultado"] = true;
+
+			$contacto_id = $this->input->post("contacto_id");
+			$this->Modelo->query_no_result("UPDATE contacto SET estatus = 'baja' WHERE idcontacto = " . $contacto_id);
+		}
+
+		echo json_encode($resultado);
 	}
 }
 ?>

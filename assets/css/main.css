@@ -52,11 +52,11 @@ a {
 }
 
 a.color {
-  background: #3368d6;
+  background: #024959;
 }
 
 header {
-  background: #323A4B;
+  background: #03738c;
   height: 150px;
   position: fixed;
   top: 0;
@@ -142,11 +142,11 @@ header {
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  background: #32d05e;
+  background: #23d171;
   position: absolute;
   right: -5px;
   bottom: 0;
-  border: 2px solid #323A4B;
+  border: 2px solid #03738c;
 }
 
 #appdata #user_session_options #profile_photo_container #profile_photo img {
@@ -246,11 +246,11 @@ header {
 }
 
 #opciones_usuario ul li:hover {
-  color: #3368d6;
+  color: #024959;
 }
 
 nav .nav_iconbar {
-  background: #1e222c;
+  background: #024a5a;
   height: 100vh;
   width: 55px;
   position: fixed;
@@ -267,7 +267,7 @@ nav .nav_iconbar .icon_nav {
 
 nav .nav_labelsbar {
   width: 192.5px;
-  background: #282e3c;
+  background: #025e73;
   height: 100vh;
   position: fixed;
   left: -100%;
@@ -288,7 +288,7 @@ nav .nav_labelsbar .text_nav {
 }
 
 nav .nav_labelsbar .text_nav:not(.first_label_nav):hover {
-  background: #3368d6;
+  background: #024959;
 }
 
 nav:hover .nav_labelsbar {
@@ -313,7 +313,7 @@ nav:hover .nav_labelsbar {
 }
 
 .caca {
-  border: 1px solid #EE4040;
+  border: 1px solid #ff0a17;
   height: 100px;
   grid-row: 2;
 }
@@ -362,7 +362,7 @@ input[type="submit"]:active {
 
 button.success,
 input[type="submit"].success {
-  background: #3368d6;
+  background: #024959;
 }
 
 button.success::after,
@@ -374,12 +374,12 @@ input[type="submit"].success::after {
 
 button.success:hover,
 input[type="submit"].success:hover {
-  background: #5d87df;
+  background: #03728b;
 }
 
 button.success:active,
 input[type="submit"].success:active {
-  background: #2452b2;
+  background: #012027;
 }
 
 .input_icono {
@@ -403,8 +403,8 @@ input[type="submit"].success:active {
 #login_main_container {
   width: 100vw;
   height: 100vh;
-  -webkit-box-shadow: inset 0 200px 0 #323A4B;
-          box-shadow: inset 0 200px 0 #323A4B;
+  -webkit-box-shadow: inset 0 200px 0 #03738c;
+          box-shadow: inset 0 200px 0 #03738c;
 }
 
 .formulario_login {
@@ -422,7 +422,7 @@ input[type="submit"].success:active {
 }
 
 .titulo_login {
-  color: #3368d6;
+  color: #024959;
   font-size: 30px;
   font-weight: lighter;
 }
@@ -455,7 +455,7 @@ input[type="submit"].success:active {
 
 a {
   text-decoration: none;
-  color: #32d05e;
+  color: #23d171;
 }
 
 #contacto_container div {
@@ -472,8 +472,16 @@ a {
   display: block;
 }
 
+#sangre_contacto {
+  display: none;
+}
+
+#sangre_contacto.activo {
+  display: block;
+}
+
 .campo_error {
-  border: 0.5px solid #EE4040 !important;
+  border: 0.5px solid #ff0a17 !important;
 }
 
 #foto_contacto {

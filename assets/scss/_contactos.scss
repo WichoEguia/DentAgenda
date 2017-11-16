@@ -13,6 +13,14 @@
   }
 }
 
+#sangre_contacto{
+  display: none;
+
+  &.activo{
+    display: block;
+  }
+}
+
 .campo_error{
   border: 0.5px solid $color_peligro !important;
 }
