@@ -39,7 +39,7 @@ input[type="submit"]{
   }
 
   &.success{
-    background: $color_secundario;
+    background: darken($color_secundario,25%);
 
     &::after{
       content: '\f00c';
@@ -48,7 +48,7 @@ input[type="submit"]{
     }
 
     &:hover{
-      background: lighten($color_secundario, 10%);
+      background: lighten(darken($color_secundario,25%), 10%);
     }
 
     &:active{

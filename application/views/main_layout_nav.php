@@ -5,23 +5,23 @@
     </div>
 
     <a href="<?php echo base_url('index.php/Perfil') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-id-card-o" aria-hidden="true" style="<?php echo $item == 1 ? 'color:  ' : 'color: white' ?>"></i>
+      <i class="fa fa-id-card-o" aria-hidden="true" style="<?php echo $item == 1 ? 'color: #22aa98' : 'color: white' ?>"></i>
     </a>
 
     <a href="<?php echo base_url('index.php/Contactos') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-address-book-o" aria-hidden="true" style="<?php echo $item == 2 ? 'color: #3368d6' : 'color: white' ?>"></i>
+      <i class="fa fa-address-book-o" aria-hidden="true" style="<?php echo $item == 2 ? 'color: #22aa98' : 'color: white' ?>"></i>
     </a>
 
     <a href="<?php echo base_url('index.php/Citas/nueva_cita') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-plus" aria-hidden="true" style="<?php echo $item == 3 ? 'color: #3368d6' : 'color: white' ?>"></i>
+      <i class="fa fa-plus" aria-hidden="true" style="<?php echo $item == 3 ? 'color: #22aa98' : 'color: white' ?>"></i>
     </a>
 
     <a href="<?php echo base_url('index.php/Inventario') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-list" aria-hidden="true" style="<?php echo $item == 4 ? 'color: #3368d6' : 'color: white' ?>"></i>
+      <i class="fa fa-list" aria-hidden="true" style="<?php echo $item == 4 ? 'color: #22aa98' : 'color: white' ?>"></i>
     </a>
 
     <a href="<?php echo base_url('index.php/Agenda') ?>" class="icon_nav flex center-X center-Y">
-      <i class="fa fa-calendar" aria-hidden="true" style="<?php echo $item == 5 ? 'color: #3368d6' : 'color: white' ?>"></i>
+      <i class="fa fa-calendar" aria-hidden="true" style="<?php echo $item == 5 ? 'color: #22aa98' : 'color: white' ?>"></i>
     </a>
   </div>
 

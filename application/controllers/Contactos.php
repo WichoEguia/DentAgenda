@@ -100,5 +100,28 @@ class Contactos extends CI_Controller {
 
 		echo json_encode($resultado);
 	}
+
+	public function editar_contacto(){
+		if(!$this->input->get("id")){
+			header('location: ' . base_url("index.php/Contactos") . '');
+		}else{
+			$contacto_id = $this->input->get("id");
+			$datos_contacto = $this->obtener_datos_contacto($contacto_id);
+
+			$this->load->view('main_layout_header', array('titulo' => 'Editar Contacto'));
+			$this->load->view('main_layout_nav', array('item' => 0));
+			$this->load->view("da_editar_contacto", array('data' => $datos_contacto));
+			$this->load->view('main_layout_footer');
+		}
+	}
+
+	public function obtener_datos_contacto($id){
+		$resultado = $this->Modelo->query("SELECT * FROM contacto WHERE idcontacto = " . $id);
+		if(count($resultado) > 0){
+			return $resultado[0];
+		}else{
+			header('location: ' . base_url("index.php/Contactos") . '');
+		}
+	}
 }
 ?>

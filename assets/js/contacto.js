@@ -15,6 +15,7 @@ function Contacto(){
     $(".eliminar_contacto").off();
     $("#nuevo_contacto").off();
 
+    $(".editar_contacto").off();
     $("#select_tipo_contacto").change(function(){
       console.log($(this).val());
       if($(this).val() == "cliente"){
@@ -80,6 +81,11 @@ function Contacto(){
 
     $("#nuevo_contacto").click(function(){
       window.location.href = base_url + "index.php/Contactos/nuevo_contacto";
+    });
+
+    $(".editar_contacto").click(function(){
+      var contacto_id = $(this).parent().parent().find(".idcontacto").val();
+      window.location. href = base_url + "index.php/Contactos/editar_contacto/?id=" + contacto_id
     })
   }
 
@@ -180,7 +186,7 @@ function Contacto(){
   var llenar_contactos = function(contacto){
     c = "";
     for(var i = 0;i < contacto.length; i++){
-      c += "<div id='contacto_" + contacto[i].idcontacto + "' class='evento' style='background: #fff;padding: 15px 30px;width: 80%;margin: 20px auto;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;'>";
+      c += "<div id='contacto_" + contacto[i].idcontacto + "' class='evento' style='background: #fff;padding: 15px 30px;width: 90%;margin: 20px auto;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;'>";
       c += "  <div class='flex' style='margin: 10px 0;'>";
       c += "    <img style='width:70px;height:70px;border-radius:50%;' src='" + contacto[i].foto + "'>"
       c += "    <div style='margin-left: 15px;'>";

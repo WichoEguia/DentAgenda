@@ -27,7 +27,7 @@ img{
   @include square(100%);
 }
 
-input, button{
+input, button, textarea, select{
   &:focus{
     outline: none;
   }
