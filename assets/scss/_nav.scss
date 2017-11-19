@@ -4,55 +4,45 @@
 $espacio_icono: 55px;
 
 nav{
-  // display: grid;
-  // grid-template-columns: 1fr;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0px;
+  // grid-row: 1 / span 2;
+  width: 200px;
+  height: 100vh;
+  @include shadow(1);
+}
 
-  .nav_iconbar{
-    // background: darken($color_primario, 45%);
-    background: #343434;
-    height: 100vh;
-    width: $espacio_icono;
-    position: fixed;
-    left: 0;
-    padding-top: $header_height;
-    z-index: 99;
+#logo_imagen{
+  height: 80px;
 
-    .icon_nav{
-      color: #fff;
-      width: 100%;
-      height: $espacio_icono;
-    }
+  img{
+    @include square(75%);
   }
+}
 
-  .nav_labelsbar{
-    width: $espacio_icono * 3.5;
-    background: darken($color_primario, 20%);
-    height: 100vh;
-    position: fixed;
-    // left: $espacio_icono;
-    left: -100%;
-    top: 0;
-    padding-top: $header_height;
-    z-index: 98;
-    transition: left .5s;
-
-    .text_nav{
-      width: 100%;
-      height: $espacio_icono;
-      padding-left: 10px;
-      color: #fff;
-      transition: background .5s;
-
-      &:not(.first_label_nav):hover{
-        background: #fff;
-        color: $color_primario;
-      }
-    }
-  }
+.text_nav{
+  display: flex;
+  padding: 15px 15px 15px 20px;
+  color: lighten($carbon, 35%);
+  transition: all .3s ease-in-out;
 
   &:hover{
-    .nav_labelsbar{
-      left: $espacio_icono;
-    }
+    background: darken($color_primario, 5%);
+    padding-left: 25px;
+    color: #fff;
   }
+
+  i{
+    margin-right: 10px;
+  }
+}
+
+.linea_separacion{
+  width: 30%;
+  height: 1px;
+  background: lighten($gris, 25%);
+  margin: 0 auto;
+  margin-bottom: 10px;
 }

@@ -19,7 +19,7 @@
   <script src="<?php echo base_url('assets/js/wickedpicker/src/wickedpicker.js') ?>" charset="utf-8"></script>
 </head>
 <body>
-  <header>
+  <!-- <header>
     <div id="appdata">
       <div id="logo" class="flex center-Y center-X">
         <div id="logo_container" class="flex center-Y">
@@ -40,14 +40,14 @@
       </div>
     </div>
     <div id="actionbar" class="flex">
-      <!-- Barra de busqueda, añadir persona, estilos de vista -->
+      Barra de busqueda, añadir persona, estilos de vista
       <div class="section_actionbar left flex center-Y">
-        <!-- <div id="searchbar_container" class="flex center-X center-Y">
+        <div id="searchbar_container" class="flex center-X center-Y">
           <div id="searchbar" class="flex center-Y">
             <i class="fa fa-search" aria-hidden="true"></i>
             <input type="text" placeholder="Buscar equipos y personas">
           </div>
-        </div> -->
+        </div>
         <p id="titulo_vista"><?php echo isset($titulo) ? $titulo : '' ?></p>
       </div>
       <div class="section_actionbar right">
@@ -71,5 +71,21 @@
           Cerrar sesion
         </li>
       </ul>
+    </div>
+  </header> -->
+  <header class="flex">
+    <div class="titulo_vista_contenedor flex center-Y">
+      <p id="titulo_vista"><?php echo isset($titulo) ? $titulo : '' ?></p>
+    </div>
+
+    <div id="informacion_usuario" class="flex center-Y">
+      <div id="informacion_usuario_nombre">
+        <p>Bienvenido, Luis</p>
+        <p id="full_date">--/--/---- --:--</p>
+      </div>
+
+      <div id="profile_photo" class="flex center-Y">
+        <img src="<?php echo base_url("assets/img/dogo_da.jpeg") ?>"  alt="Imagen de perfil">
+      </div>
     </div>
   </header>
