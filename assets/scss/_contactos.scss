@@ -5,21 +5,21 @@
   flex: 1;
 }
 
-#field_alergias_contacto{
-  display: none;
-
-  &.activo{
-    display: block;
-  }
-}
-
-#sangre_contacto{
-  display: none;
-
-  &.activo{
-    display: block;
-  }
-}
+// #field_alergias_contacto{
+//   display: none;
+//
+//   &.activo{
+//     display: block;
+//   }
+// }
+//
+// #sangre_contacto{
+//   display: none;
+//
+//   &.activo{
+//     display: block;
+//   }
+// }
 
 .campo_error{
   border: 0.5px solid $color_peligro !important;

@@ -1,4 +1,4 @@
-<button type="button" id="nuevo_contacto" class="success" name="button">Nuevo Contacto</button>
+<button type="button" id="nuevo_contacto" class="success" name="button">Agregar Paciente</button>
 <div id="contactos_contenedor" class=""></div>
 
 <script src="<?php echo base_url('assets/js/contacto.js') ?>" charset="utf-8"></script>

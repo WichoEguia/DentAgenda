@@ -30,14 +30,14 @@
         </div>
       </div>
 
-      <div class="field">
+      <!-- <div class="field">
         <label for="tipo_contacto">Tipo de contacto</label>
         <select id="select_tipo_contacto" name="tipo_contacto">
           <option disabled value="">Seleccione</option>
           <option value="cliente">Paciente</option>
           <option value="proveedor">Proveedor</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="field" id="field_alergias_contacto">
         <label for="alergias_contacto">Alergias</label><br>
@@ -51,7 +51,7 @@
       <div class="field" id="sangre_contacto">
         <label for="tipo_sangre_contacto">Tipo de sangre</label>
         <select id="select_tipo_sangre_contacto" name="tipo_sangre_contacto">
-          <option disabled value="">Seleccione</option>
+          <option disabled selected value="">Seleccione</option>
           <option value="A">A</option>
           <option value="B">B</option>
           <option value="AB">AB</option>
@@ -62,7 +62,7 @@
       <div class="field" id="field_sexofoto_contacto">
         <label for="sexo_contacto">Sexo de contacto</label>
         <select id="select_sexo_contacto" name="sexo_contacto">
-          <option disabled value="">Seleccione</option>
+          <option disabled selected value="">Seleccione</option>
           <option value="hombre">Masculino</option>
           <option value="mujer">Femenino</option>
         </select>
@@ -83,4 +83,6 @@
   var contacto = new Contacto();
   contacto.setUrl(url);
   contacto.ev();
+
+  // alert($("#select_sexo_contacto").val());
 </script>

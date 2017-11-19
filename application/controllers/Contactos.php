@@ -17,7 +17,7 @@ class Contactos extends CI_Controller {
 
 	public function index(){
 		$this->load->helper('url');
-		$this->load->view('main_layout_header', array('titulo' => 'Contactos'));
+		$this->load->view('main_layout_header', array('titulo' => 'Pacientes'));
 		$this->load->view('main_layout_nav', array('item' => 2));
 		$this->load->view('da_ver_contacto');
 		$this->load->view('main_layout_footer');
@@ -25,7 +25,7 @@ class Contactos extends CI_Controller {
 
 	public function nuevo_contacto(){
 		$this->load->helper('url');
-		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Contacto'));
+		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Paciente'));
 		$this->load->view('main_layout_nav', array('item' => 0));
 		$this->load->view("da_agregar_contacto");
 		$this->load->view('main_layout_footer');
@@ -37,7 +37,7 @@ class Contactos extends CI_Controller {
 		$email = $this->input->post("email_contacto");
 		$telefono = $this->input->post("telefono_contacto");
 		$telefono_secundario = $this->input->post("telefono_secundario_contacto");
-		$tipo = $this->input->post("tipo_contacto");
+		// $tipo = $this->input->post("tipo_contacto");
 		$alergias = $this->input->post("alergias_contacto");
 		$sexo = $this->input->post("sexo_contacto");
 		$foto_contacto = $this->input->post("foto_contacto");
@@ -64,7 +64,7 @@ class Contactos extends CI_Controller {
 			"email" => $email,
 			"telefono_principal" => $telefono,
 			"telefono_auxiliar" => $telefono_secundario,
-			"tipo_contacto" => $tipo,
+			// "tipo_contacto" => $tipo,
 			"activar_recordatorios" => "no",
 			"estatus" => "activo",
 			"alergias" => $alergias,
@@ -132,7 +132,7 @@ class Contactos extends CI_Controller {
 		$email = $this->input->post("email_contacto");
 		$telefono = $this->input->post("telefono_contacto");
 		$telefono_secundario = $this->input->post("telefono_secundario_contacto");
-		$tipo = $this->input->post("tipo_contacto");
+		// $tipo = $this->input->post("tipo_contacto");
 		$alergias = $this->input->post("alergias_contacto");
 		$sexo = $this->input->post("sexo_contacto");
 		$foto_contacto = $this->input->post("foto_contacto");
@@ -161,7 +161,7 @@ class Contactos extends CI_Controller {
 			"email" => $email,
 			"telefono_principal" => $telefono,
 			"telefono_auxiliar" => $telefono_secundario,
-			"tipo_contacto" => $tipo,
+			// "tipo_contacto" => $tipo,
 			"activar_recordatorios" => "no",
 			"estatus" => "activo",
 			"alergias" => $alergias,

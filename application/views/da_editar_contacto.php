@@ -32,14 +32,14 @@
         </div>
       </div>
 
-      <div class="field">
+      <!-- <div class="field">
         <label for="tipo_contacto">Tipo de contacto</label>
         <select id="select_tipo_contacto" name="tipo_contacto" value="<?php echo isset($tipo_contacto) ? $tipo_contacto : "" ?>">
           <option disabled value="">Seleccione</option>
           <option value="cliente">Paciente</option>
           <option value="proveedor">Proveedor</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="field" id="field_alergias_contacto">
         <label for="alergias_contacto">Alergias</label><br>
@@ -87,12 +87,7 @@ $(document).ready(function(){
     contacto.setUrl(url);
     contacto.ev();
 
-    $('#select_tipo_contacto option[value="<?php echo isset($tipo_contacto) ? $tipo_contacto : "" ?>"]').attr("selected", true);
     $('#select_tipo_sangre_contacto option[value="<?php echo isset($tipo_sangre) ? $tipo_sangre : "" ?>"]').attr("selected", true);
     $('#select_sexo_contacto option[value="<?php echo isset($sexo) ? $sexo : "" ?>"]').attr("selected", true);
-
-    if($("#select_tipo_contacto").val() == "cliente"){
-      $("#field_alergias_contacto, #sangre_contacto").addClass("activo");
-    }
   });
 </script>
