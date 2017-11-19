@@ -17,7 +17,7 @@ class Contactos extends CI_Controller {
 
 	public function index(){
 		$this->load->helper('url');
-		$this->load->view('main_layout_header', array('titulo' => 'Contactos'));
+		$this->load->view('main_layout_header', array('titulo' => 'Pacientes'));
 		$this->load->view('main_layout_nav', array('item' => 2));
 		$this->load->view('da_ver_contacto');
 		$this->load->view('main_layout_footer');
