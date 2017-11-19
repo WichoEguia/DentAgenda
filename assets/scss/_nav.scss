@@ -8,7 +8,8 @@ nav{
   // grid-template-columns: 1fr;
 
   .nav_iconbar{
-    background: darken($color_primario, 45%);
+    // background: darken($color_primario, 45%);
+    background: #343434;
     height: 100vh;
     width: $espacio_icono;
     position: fixed;

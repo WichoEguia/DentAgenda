@@ -56,7 +56,7 @@ a.color {
 }
 
 header {
-  background: #22aa98;
+  background: #2ad5be;
   height: 150px;
   position: fixed;
   top: 0;
@@ -250,7 +250,7 @@ header {
 }
 
 nav .nav_iconbar {
-  background: #041513;
+  background: #343434;
   height: 100vh;
   width: 55px;
   position: fixed;

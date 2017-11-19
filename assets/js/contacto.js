@@ -159,7 +159,7 @@ function Contacto(){
       $("#select_sexo_contacto").addClass("campo_error");
     }
 
-    if(res_f && res_n && res_tel && res_t && res_e && res_a && res_s){
+    if(res_f && res_n && res_tel && res_t && res_e && res_a && res_s && res_sang){
       resultado = true;
     }
 
@@ -186,25 +186,29 @@ function Contacto(){
   var llenar_contactos = function(contacto){
     c = "";
     for(var i = 0;i < contacto.length; i++){
+      console.log(contacto[i]);
       c += "<div id='contacto_" + contacto[i].idcontacto + "' class='evento' style='background: #fff;padding: 15px 30px;width: 90%;margin: 20px auto;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;'>";
       c += "  <div class='flex' style='margin: 10px 0;'>";
       c += "    <img style='width:70px;height:70px;border-radius:50%;' src='" + contacto[i].foto + "'>"
       c += "    <div style='margin-left: 15px;'>";
-      c += "      <p class='nombre_contacto' style='font-size:18px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].folio + " - " + contacto[i].nombre + "</p>";
+      c += "      <p class='nombre_contacto' style='font-size:20px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].folio + " - " + contacto[i].nombre + "</p>";
       if(contacto[i].email != ""){
-        c += "    <p>Correo electronico: " + contacto[i].email + "</p>";
+        c += "    <p style='font-size:18px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].email + "</p>";
       }
-      c += "      <p>Telefono principal: " + contacto[i].telefono_principal + "</p>";
+      c += "      <p style='font-size:16px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].telefono_principal + "</p>";
       if(contacto[i].telefono_secundario != "" && contacto[i].telefono_secundario != undefined){
         c += "    <p>Telefono secundario: " + contacto[i].telefono_secundario + "</p>";
       }
       if(contacto[i].alergias != ""){
         c += "    <p class='alergias_contacto'>Alergias: " + contacto[i].alergias + "</p>";
       }
+      if(contacto[i].tipo_sangre != ""){
+        c += "    <p class='alergias_contacto'>Tipo de sangre: " + contacto[i].tipo_sangre + "</p>";
+      }
       c += "      <p class='sexo_contacto'>Sexo: " + contacto[i].sexo + "</p>";
       c += "    </div>";
       c += "  </div>";
-      c += "  <input class='idcontacto' type='hidden' value='" + contacto[i].idcontacto + "'>";
+      c += "  <input name='idcontacto' class='idcontacto' type='hidden' value='" + contacto[i].idcontacto + "'>";
       c += "  <div style='display:flex; justify-content:flex-end'>"
       c += "    <p class='editar_contacto' style='color: steelblue; text-align: right; margin-top: 10px;margin-right: 10px ;cursor: pointer; font-size: 20px;'><i class='fa fa-pencil-square-o'></i></p>";
       c += "    <p class='eliminar_contacto' style='color: tomato; text-align: right; margin-top: 10px; cursor: pointer; font-size: 20px;'><i class='fa fa-trash'></i></p>";

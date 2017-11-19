@@ -2,7 +2,7 @@
 @import "mixins";
 
 header{
-  background: darken($color_primario, 10%);
+  background: darken($color_primario, 0%);
   height: $header_height;
   position: fixed;
   top: 0;
