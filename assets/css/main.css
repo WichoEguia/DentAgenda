@@ -465,22 +465,6 @@ a {
           flex: 1;
 }
 
-#field_alergias_contacto {
-  display: none;
-}
-
-#field_alergias_contacto.activo {
-  display: block;
-}
-
-#sangre_contacto {
-  display: none;
-}
-
-#sangre_contacto.activo {
-  display: block;
-}
-
 .campo_error {
   border: 0.5px solid #ff0a17 !important;
 }

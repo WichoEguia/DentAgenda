@@ -14,32 +14,34 @@ function Contacto(){
     $("#select_tipo_contacto").off();
     $(".eliminar_contacto").off();
     $("#nuevo_contacto").off();
-
     $(".editar_contacto").off();
-    $("#select_tipo_contacto").change(function(){
-      console.log($(this).val());
-      if($(this).val() == "cliente"){
-        $("#field_alergias_contacto, #sangre_contacto").addClass("activo");
-      }else{
-        $("#field_alergias_contacto, #sangre_contacto").removeClass("activo");
-      }
-    });
+
+    // $("#select_tipo_contacto").change(function(){
+    //   console.log($(this).val());
+    //   if($(this).val() == "cliente"){
+    //     $("#field_alergias_contacto, #sangre_contacto").addClass("activo");
+    //   }else{
+    //     $("#field_alergias_contacto, #sangre_contacto").removeClass("activo");
+    //   }
+    // });
 
     $("#formulario_nuevo_contacto").submit(function(e){
+      // e.preventDefault();
       var folio = $("#folio_contacto").val();
       var nombre = $("#nombre_contacto").val();
       var email = $("#email_contacto").val();
       var telefono = $("#telefono_contacto").val();
       var telefono_secundario = $("#telefono_secundario_contacto").val();
-      var tipo = $("#select_tipo_contacto").val();
+      // var tipo = $("#select_tipo_contacto").val();
       var alergias = $("#alergias_contacto").val();
       var sangre = $("#select_tipo_sangre_contacto").val();
       var sexo = $("#select_sexo_contacto").val();
-      console.log("ggg");
+      // console.log("ggg");
 
       $("input,select").removeClass("campo_error");
 
-      var paso = valida_datos(folio,nombre,telefono,tipo,email,alergias,sexo,sangre);
+      var paso = valida_datos(folio,nombre,telefono,email,alergias,sexo,sangre);
+      // alert(paso)
 
       if(!paso){
         e.preventDefault();
@@ -89,11 +91,10 @@ function Contacto(){
     })
   }
 
-  var valida_datos = function(folio,nombre,telefono,tipo,email,alergias,sexo,sangre){
+  var valida_datos = function(folio,nombre,telefono,email,alergias,sexo,sangre){
     var res_f = false;
     var res_n = false;
     var res_tel = false;
-    var res_t = false;
     var res_e = false;
     var res_a = false;
     var res_s = false;
@@ -119,32 +120,44 @@ function Contacto(){
       $("#telefono_contacto").addClass("campo_error");
     }
 
-    if(tipo != ""){
-      res_t = true;
-      console.log(tipo);
-      if(tipo == "cliente"){
-        if(alergias != ""){
-          res_a = true;
-        }else{
-          $("#alergias_contacto").addClass("campo_error");
-        }
+    // if(tipo != ""){
+    //   res_t = true;
+    //   console.log(tipo);
+    //   if(tipo == "cliente"){
+    //     if(alergias != ""){
+    //       res_a = true;
+    //     }else{
+    //       $("#alergias_contacto").addClass("campo_error");
+    //     }
+    //
+    //     if(sangre != ""){
+    //       res_sang = true;
+    //     }else{
+    //       $("#select_tipo_sangre_contacto").addClass("campo_error");
+    //     }
+    //   }else{
+    //     if(alergias == ""){
+    //       res_a = true;
+    //     }
+    //
+    //     if(sangre == ""){
+    //       res_sang = true;
+    //     }
+    //   }
+    // }else{
+    //   $("#select_tipo_contacto").addClass("campo_error");
+    // }
 
-        if(sangre != ""){
-          res_sang = true;
-        }else{
-          $("#select_tipo_sangre_contacto").addClass("campo_error");
-        }
-      }else{
-        if(alergias == ""){
-          res_a = true;
-        }
-
-        if(sangre == ""){
-          res_sang = true;
-        }
-      }
+    if(alergias != ""){
+      res_a = true;
     }else{
-      $("#select_tipo_contacto").addClass("campo_error");
+      $("#alergias_contacto").addClass("campo_error");
+    }
+
+    if(sangre != null){
+      res_sang = true;
+    }else{
+      $("#select_tipo_sangre_contacto").addClass("campo_error");
     }
 
     if(re.test(email) || email == ""){
@@ -153,13 +166,16 @@ function Contacto(){
       $("#email_contacto").addClass("campo_error");
     }
 
-    if(sexo != ""){
+    if(sexo != null){
       res_s = true;
     }else{
       $("#select_sexo_contacto").addClass("campo_error");
     }
 
-    if(res_f && res_n && res_tel && res_t && res_e && res_a && res_s && res_sang){
+    console.log(res_s);
+    console.log(res_sang);
+
+    if(res_f && res_n && res_tel && res_e && res_a && res_s && res_sang){
       resultado = true;
     }
 
