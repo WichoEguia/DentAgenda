@@ -22,13 +22,6 @@ class Citas extends CI_Controller {
 		$this->load->view('main_layout_footer');
 	}
 
-	// public function editar_cita(){
-	// 	$this->load->view('main_layout_header',array('titulo' => 'Editar cita'));
-	// 	$this->load->view('main_layout_nav', array('item' => 3));
-	// 	$this->load->view('da_citas',array("citaid" => $this->input->post("cita_id")));
-	// 	$this->load->view('main_layout_footer');
-	// }
-
 	public function obtener_clientes(){
 		$resultado["resultado"] = false;
 		$dentista_id = $this->session->userdata("iddentista");

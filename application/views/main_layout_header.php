@@ -31,7 +31,7 @@
       </div>
 
       <div id="profile_photo" class="flex center-Y">
-        <img src="<?php echo base_url("assets/img/dogo_da.jpeg") ?>"  alt="Imagen de perfil">
+        <img src="<?php echo base_url("assets/img/perfil_da.jpg") ?>"  alt="Imagen de perfil">
       </div>
     </div>
   </header>

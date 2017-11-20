@@ -1,22 +1,23 @@
+<button id="button_nuevo_producto" type="button" class="success" name="button">Nuevo Producto</button>
+
 <div id="contenedor_inventario">
-  <table>
+  <table id="inventario">
     <thead>
       <tr>
-        <td>ID</td>
+        <td>Folio</td>
         <td>Nombre elemento</td>
         <td>Descripción</td>
-        <td>Cantidad de unidades</td>
+        <td>Cantidad</td>
         <td>Proximo abastecimiento</td>
+        <td>Estado</td>
       </tr>
     </thead>
 
-    <tbody id="elementos_inventario">
-
-    </tbody>
+    <tbody id="elementos_inventario"></tbody>
   </table>
 </div>
 
-<script src="<?php echo base_url("assets/js/citas.js") ?>" charset="utf-8"></script>
+<script src="<?php echo base_url("assets/js/inventario.js") ?>" charset="utf-8"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     var base_url = "<?php echo base_url() ?>";
