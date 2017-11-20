@@ -24,3 +24,11 @@
 .campo_error{
   border: 0.5px solid $color_peligro !important;
 }
+
+#contactos_contenedor{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}

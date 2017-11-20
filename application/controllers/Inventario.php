@@ -6,6 +6,7 @@ class Inventario extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->view('main_layout_header', array('titulo' => 'Inventario'));
 		$this->load->view('main_layout_nav', array('item' => 4));
+		$this->load->view("da_inventario");
 		$this->load->view('main_layout_footer');
 	}
 }
