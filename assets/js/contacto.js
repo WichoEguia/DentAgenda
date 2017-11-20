@@ -62,8 +62,9 @@ function Contacto(){
         buttons: ["Cancelar", "Dar de baja"]
       }).then(function (result) {
         if (result) {
-          var contacto_id = thiss.parent().parent().find(".idcontacto").val();
-          var elemento = thiss.parent().parent().attr("id");
+          var contacto_id = thiss.parent().parent().parent().find(".idcontacto").val();
+          var elemento = thiss.parent().parent().parent().attr("id");
+          console.log(elemento);
           $.ajax({
               method : "POST",
               url : base_url + "index.php/Contactos/baja_contacto",
@@ -86,7 +87,7 @@ function Contacto(){
     });
 
     $(".editar_contacto").click(function(){
-      var contacto_id = $(this).parent().parent().find(".idcontacto").val();
+      var contacto_id = $(this).parent().parent().parent().find(".idcontacto").val();
       window.location. href = base_url + "index.php/Contactos/editar_contacto/?id=" + contacto_id
     })
   }

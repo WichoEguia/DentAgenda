@@ -365,6 +365,40 @@ input[type="submit"].success:active {
   margin-left: 30px;
 }
 
+#contenedor_inventario {
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+tbody td {
+  border: 0.2px solid #95949B;
+}
+
+table {
+  border-radius: 10px;
+}
+
+#inventario {
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 10px;
+  border-collapse: collapse;
+}
+
+#inventario td {
+  padding: 0 10px;
+}
+
+#inventario thead tr {
+  background: #198072;
+  color: #fff;
+  height: 50px;
+}
+
+#inventario tbody {
+  background: #fff;
+}
+
 main {
   grid-row: 2;
   grid-column: 2 / span 2;
