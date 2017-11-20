@@ -26,7 +26,7 @@
 
     <div id="informacion_usuario" class="flex center-Y">
       <div id="informacion_usuario_nombre">
-        <p>Bienvenido, Luis</p>
+        <p>Bienvenido, <?php echo $nombre ?></p>
         <p id="full_date">--/--/---- --:--</p>
       </div>
 

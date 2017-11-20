@@ -16,7 +16,7 @@ class Citas extends CI_Controller {
 	}
 
 	public function nueva_cita(){
-		$this->load->view('main_layout_header',array('titulo' => 'Nueva Cita'));
+		$this->load->view('main_layout_header',array('titulo' => 'Nueva Cita', 'nombre' => $this->session->userdata("nombre")));
 		$this->load->view('main_layout_nav', array('item' => 3));
 		$this->load->view('da_citas');
 		$this->load->view('main_layout_footer');

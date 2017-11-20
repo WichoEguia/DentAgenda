@@ -15,7 +15,7 @@
     }
 
     public function index(){
-      $this->load->view('main_layout_header', array('titulo' => 'Agenda'));
+      $this->load->view('main_layout_header', array('titulo' => 'Agenda', 'nombre' => $this->session->userdata("nombre")));
   		$this->load->view('main_layout_nav', array('item' => 4));
   		$this->load->view('da_agenda');
   		$this->load->view('main_layout_footer');

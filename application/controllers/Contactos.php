@@ -17,7 +17,7 @@ class Contactos extends CI_Controller {
 
 	public function index(){
 		$this->load->helper('url');
-		$this->load->view('main_layout_header', array('titulo' => 'Pacientes'));
+		$this->load->view('main_layout_header', array('titulo' => 'Pacientes', 'nombre' => $this->session->userdata("nombre")));
 		$this->load->view('main_layout_nav', array('item' => 2));
 		$this->load->view('da_ver_contacto');
 		$this->load->view('main_layout_footer');
@@ -25,7 +25,7 @@ class Contactos extends CI_Controller {
 
 	public function nuevo_contacto(){
 		$this->load->helper('url');
-		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Paciente'));
+		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Paciente', 'nombre' => $this->session->userdata("nombre")));
 		$this->load->view('main_layout_nav', array('item' => 0));
 		$this->load->view("da_agregar_contacto");
 		$this->load->view('main_layout_footer');
@@ -110,7 +110,7 @@ class Contactos extends CI_Controller {
 			$contacto_id = $this->input->get("id");
 			$datos_contacto = $this->obtener_datos_contacto($contacto_id);
 
-			$this->load->view('main_layout_header', array('titulo' => 'Editar Contacto'));
+			$this->load->view('main_layout_header', array('titulo' => 'Editar Contacto', 'nombre' => $this->session->userdata("nombre")));
 			$this->load->view('main_layout_nav', array('item' => 0));
 			$this->load->view("da_editar_contacto", $datos_contacto);
 			$this->load->view('main_layout_footer');

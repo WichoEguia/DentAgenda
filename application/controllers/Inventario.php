@@ -17,7 +17,7 @@ class Inventario extends CI_Controller {
 
 	public function index(){
 		$this->load->helper('url');
-		$this->load->view('main_layout_header', array('titulo' => 'Inventario'));
+		$this->load->view('main_layout_header', array('titulo' => 'Inventario', 'nombre' => $this->session->userdata("nombre")));
 		$this->load->view('main_layout_nav', array('item' => 5));
 		$this->load->view("da_inventario");
 		$this->load->view('main_layout_footer');
@@ -37,7 +37,7 @@ class Inventario extends CI_Controller {
 	}
 
 	public function nuevo_producto(){
-		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Producto'));
+		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Producto', 'nombre' => $this->session->userdata("nombre")));
 		$this->load->view('main_layout_nav');
 		$this->load->view("da_productos");
 		$this->load->view('main_layout_footer');
