@@ -203,15 +203,15 @@ function Contacto(){
     c = "";
     for(var i = 0;i < contacto.length; i++){
       console.log(contacto[i]);
-      c += "<div id='contacto_" + contacto[i].idcontacto + "' class='evento' style='background: #fff;padding: 15px 30px;width: 90%;margin: 20px auto;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;'>";
-      c += "  <div class='flex' style='margin: 10px 0;'>";
-      c += "    <img style='width:70px;height:70px;border-radius:50%;' src='" + contacto[i].foto + "'>"
+      c += "<div id='contacto_" + contacto[i].idcontacto + "' class='evento' style='background: #fff;padding: 15px 30px;width: 100%;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;position: relative;'>";
+      c += "  <img style='width:70px;height:70px;border-radius:50%;' src='" + contacto[i].foto + "'>"
+      c += "  <div class='flex' style='margin: 10px 0 30px 0;'>";
       c += "    <div style='margin-left: 15px;'>";
-      c += "      <p class='nombre_contacto' style='font-size:20px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].folio + " - " + contacto[i].nombre + "</p>";
+      c += "      <p class='nombre_contacto' style='font-size:20px;margin: 5px 0;color: #2ad5be;font-weight: bolder;'>" + contacto[i].folio + " - " + contacto[i].nombre + "</p>";
       if(contacto[i].email != ""){
-        c += "    <p style='font-size:18px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].email + "</p>";
+        c += "    <p style='font-size:18px;margin: 5px 0;color: #2ad5be;font-weight: bolder;'>" + contacto[i].email + "</p>";
       }
-      c += "      <p style='font-size:16px;margin: 5px 0;color: #4b4b4b;font-weight: bolder;'>" + contacto[i].telefono_principal + "</p>";
+      c += "      <p style='font-size:16px;margin: 5px 0;color: #2ad5be;font-weight: bolder;'>" + contacto[i].telefono_principal + "</p>";
       if(contacto[i].telefono_secundario != "" && contacto[i].telefono_secundario != undefined){
         c += "    <p>Telefono secundario: " + contacto[i].telefono_secundario + "</p>";
       }
@@ -225,9 +225,11 @@ function Contacto(){
       c += "    </div>";
       c += "  </div>";
       c += "  <input name='idcontacto' class='idcontacto' type='hidden' value='" + contacto[i].idcontacto + "'>";
-      c += "  <div style='display:flex; justify-content:flex-end'>"
-      c += "    <p class='editar_contacto' style='color: steelblue; text-align: right; margin-top: 10px;margin-right: 10px ;cursor: pointer; font-size: 20px;'><i class='fa fa-pencil-square-o'></i></p>";
-      c += "    <p class='eliminar_contacto' style='color: tomato; text-align: right; margin-top: 10px; cursor: pointer; font-size: 20px;'><i class='fa fa-trash'></i></p>";
+      c += "  <div style='position: absolute;bottom: 10px;right: 30px;margin-top: 10px;'>";
+      c += "    <div style='display:flex; justify-content:flex-end'>"
+      c += "      <p class='editar_contacto' style='color: steelblue; text-align: right; margin-top: 10px;margin-right: 10px ;cursor: pointer; font-size: 20px;'><i class='fa fa-pencil-square-o'></i></p>";
+      c += "      <p class='eliminar_contacto' style='color: tomato; text-align: right; margin-top: 10px; cursor: pointer; font-size: 20px;'><i class='fa fa-trash'></i></p>";
+      c += "    </div>";
       c += "  </div>";
       c += "</div>";
     };

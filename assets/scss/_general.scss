@@ -7,6 +7,7 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   // border: 1px solid red;
+  font-size: 100%;
 
   &:before,
   &:after{
@@ -19,8 +20,8 @@ body{
   background-color: $white;
   height: 100vh;
   display: grid;
-  grid-template-columns: 55px 1fr;
-  grid-template-rows: 150px 1fr;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr;
 }
 
 img{
@@ -47,8 +48,5 @@ input, button, textarea, select{
 
 a{
   text-decoration: none;
-
-  &.color{
-    background: $color_secundario;
-  }
+  color: darken($color_primario, 10%);
 }

@@ -11,8 +11,6 @@
     <script src="<?php echo base_url('assets/js/sweetalert.js') ?>"></script>
   </head>
   <body>
+    <img id="logo_da_login" src="<?php echo base_url("assets/img/logo_da.svg") ?>" alt="">
     <div id="login_main_container" class="flex center-X center-Y">
       <div class="formulario_login">
-        <div class="logo_login flex center-X center-Y">
-          <img src="<?php echo base_url("assets/img/logo_da.png") ?>" alt="Logo DentAgenda">
-        </div>
