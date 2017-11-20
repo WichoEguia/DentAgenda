@@ -38,7 +38,7 @@ class Login extends CI_Controller {
       $this->Modelo->agregar_reg("dentista",array(
         "email" => $this->input->post("email"),
         "nombre" => $this->input->post("nombre"),
-        "password" => $this->input->post("password")
+        "password" => sha1($this->input->post("password"))
       ));
 
       $this->crear_sesion($this->db->insert_id(), $this->input->post("email"), $this->input->post("nombre"));
@@ -67,7 +67,8 @@ class Login extends CI_Controller {
   public function inciar_sesion(){
     $resultado["resultado"] = false;
     $email = $this->input->post("email");
-    $password = $this->input->post("password");
+    $password = sha1($this->input->post("password"));
+		// echo $password;
 
     $usuario = $this->Modelo->query("SELECT * FROM dentista WHERE email = '" . $email . "' AND password = '" . $password . "'");
     if(count($usuario) == 1){
