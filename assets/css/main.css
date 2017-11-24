@@ -78,6 +78,10 @@ header {
   border-radius: 100%;
 }
 
+#informacion_usuario {
+  cursor: pointer;
+}
+
 #informacion_usuario_nombre p {
   font-size: .85rem;
   margin-right: 10px;
@@ -92,6 +96,36 @@ header {
   font-weight: lighter;
   font-size: 1.1rem;
   color: #26c0ab;
+}
+
+#opciones_sesion {
+  background: #fff;
+  position: fixed;
+  right: 0;
+  top: 80px;
+  display: none;
+  padding: 13px;
+  border-bottom-left-radius: 10px;
+  -webkit-transition: display .3s;
+  transition: display .3s;
+}
+
+#opciones_sesion.activo {
+  display: block;
+}
+
+#enlaces_sesion {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#foto_sesion img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin-right: 30px;
 }
 
 nav {
@@ -397,6 +431,48 @@ table {
 
 #inventario tbody {
   background: #fff;
+}
+
+#foto_perfil_contenedor {
+  width: 100%;
+  padding: 30px 0;
+}
+
+#foto_perfil_contenedor img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 5px solid #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-right: 20px;
+}
+
+#datos_dentistas {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dato_dentista {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+#caracteristicas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  height: 50px;
+  margin-top: 50px;
+}
+
+#caracteristicas div {
+  background: #fff;
+  border-radius: 50px;
+  color: #23b495;
+  font-size: .9rem;
 }
 
 main {

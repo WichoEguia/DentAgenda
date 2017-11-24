@@ -6,11 +6,6 @@
   <div id="navegacion_wrapper">
     <div class="linea_separacion"></div>
 
-    <a href="<?php echo base_url('index.php/Perfil') ?>" class="text_nav flex center-Y" style="<?php echo $item == 1 ? 'background: #26c0ab; color: #fff;' : '' ?>">
-      <i class="fa fa-id-card-o" aria-hidden="true"></i>
-      <p class="label_nav flex center-Y">Perfil</p>
-    </a>
-
     <a href="<?php echo base_url('index.php/Contactos') ?>" class="text_nav flex center-Y" style="<?php echo $item == 2 ? 'background: #26c0ab; color: #fff;' : '' ?>">
       <i class="fa fa-address-book-o" aria-hidden="true"></i>
       <p class="label_nav flex center-Y">Pacientes</p>

@@ -16,6 +16,7 @@ function Layout(){
   var eventos = function(){
     $("#user_session_options").off();
     $("#cerrar_sesion").off();
+    $("#informacion_usuario").off();
 
     $("#user_session_options").click(function(){
       $("#opciones_usuario").toggleClass("activo");
@@ -23,7 +24,11 @@ function Layout(){
 
     $("#cerrar_sesion").click(function(){
       window.location.href = base_url + "index.php/Login/salir";
-    })
+    });
+
+    $("#informacion_usuario").click(function(){
+      $("#opciones_sesion").toggleClass("activo");
+    });
   }
 
   var hora_fecha = function(){

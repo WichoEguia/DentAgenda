@@ -22,6 +22,10 @@ header{
   }
 }
 
+#informacion_usuario{
+  cursor: pointer;
+}
+
 #informacion_usuario_nombre{
   p{
     font-size: .85rem;
@@ -38,4 +42,30 @@ header{
   font-weight: lighter;
   font-size: 1.1rem;
   color: darken($color_primario,5%);
+}
+
+#opciones_sesion{
+  background: #fff;
+  position: fixed;
+  right: 0;
+  top: 80px;
+  display: none;
+  padding: 13px;
+  border-bottom-left-radius: 10px;
+  transition: display .3s;
+  // z-index: -100;
+
+  &.activo{
+    display: block;
+  }
+}
+
+#enlaces_sesion{
+  flex-direction: column;
+}
+
+#foto_sesion img{
+  @include circle(60px);
+  // border: 1px solid $gris;
+  margin-right: 30px;
 }

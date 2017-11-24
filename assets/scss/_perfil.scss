@@ -1,0 +1,38 @@
+@import "variables";
+@import "mixins";
+
+#foto_perfil_contenedor{
+  width: 100%;
+  padding: 30px 0;
+
+  img{
+    @include circle(200px);
+    border: 5px solid #fff;
+    @include shadow(1);
+    margin-right: 20px;
+  }
+}
+
+#datos_dentistas{
+  flex-direction: column;
+}
+
+.dato_dentista{
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+#caracteristicas{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  height: 50px;
+  margin-top: 50px;
+
+  div{
+    background: #fff;
+    border-radius: 50px;
+    color: darken($color_secundario, 20%);
+    font-size: .9rem;
+  }
+}

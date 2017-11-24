@@ -34,4 +34,17 @@
         <img src="<?php echo base_url("assets/img/perfil_da.jpg") ?>"  alt="Imagen de perfil">
       </div>
     </div>
+
+    <div id="opciones_sesion">
+      <div class="flex">
+        <div id="foto_sesion">
+          <img src="<?php echo base_url("assets/img/perfil_da.jpg") ?>"  alt="Imagen de perfil">
+        </div>
+        <div id="enlaces_sesion" class="flex">
+          <a href="<?php echo base_url("index.php/Perfil") ?>">Ver Perfil</a>
+          <a href="#">Editar Perfil</a>
+          <a href="<?php echo base_url("index.php/Login/salir") ?>">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
   </header>
