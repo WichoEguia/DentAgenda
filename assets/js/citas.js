@@ -12,10 +12,21 @@ function Citas(){
   var eventos = function(){
     $("#enviar_cita").off();
     $("#select_cliente").off();
+    $("#tiempo_estimado_cita").off();
 
     $("#enviar_cita").click(function(){
       enivia_formulario();
     });
+
+    $("#tiempo_estimado_cita").change(function(){
+      if($(this).val() < 1){
+        $(this).val(1);
+      }
+
+      if($(this).val() > 11){
+        $(this).val(10);
+      }
+    })
 
     $("#select_cliente").change(function(){
       var idcontacto = $(this).val();

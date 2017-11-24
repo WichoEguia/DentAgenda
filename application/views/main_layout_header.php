@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>GEET</title>
+  <title>DentAgenda</title>
   <!-- TODO: Descargar todas las dependencias -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/main.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery-ui.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/js/wickedpicker/stylesheets/wickedpicker.css') ?>">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
   <script src="<?php echo base_url('assets/js/jquery.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/moment.js') ?>" charset="utf-8"></script>
   <script src="<?php echo base_url('assets/js/jquery-ui/jquery-ui.min.js') ?>" charset="utf-8"></script>

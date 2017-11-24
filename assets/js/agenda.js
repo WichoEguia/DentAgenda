@@ -53,7 +53,7 @@ function Agenda(){
     c = "";
     for(var i = 0;i < citas.length; i++){
       var fecha_cita = moment(citas[i].fecha).format("YYYY-MM-DD hh:mm A");
-      c += "<div id='evento" + citas[i].idcita + "' class='evento' style='background: #fff;padding: 15px 30px;width: 80%;margin: 20px auto;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;'>";
+      c += "<div id='evento" + citas[i].idcita + "' class='evento' style='background: #fff;padding: 15px 30px;width: 100%;margin: 20px auto;box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);border-radius: 5px;'>";
       c += "  <p class='fecha_evento' style='font-size: 18px;color: #3368d6;font-weight: lighter;'>Cita: " + fecha_cita + "</p>";
       c += "  <div class='flex' style='margin: 10px 0;'>";
       c += "    <img style='width:70px;height:70px;border-radius:50%;' src='" + citas[i].foto + "'>"

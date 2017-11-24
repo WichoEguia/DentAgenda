@@ -88,7 +88,7 @@ function Contacto(){
 
     $(".editar_contacto").click(function(){
       var contacto_id = $(this).parent().parent().parent().find(".idcontacto").val();
-      window.location. href = base_url + "index.php/Contactos/editar_contacto/?id=" + contacto_id
+      window.location.href = base_url + "index.php/Contactos/editar_contacto/?id=" + contacto_id
     })
   }
 

@@ -26,8 +26,8 @@
     </div>
 
     <div class="field">
-      <label for="tiempo_estimado_cita">Tiempo estimado de cita (hh:mm)</label><br>
-      <input type="text" id="tiempo_estimado_cita" name="tiempo_estimado_cita">
+      <label for="tiempo_estimado_cita">Tiempo estimado de cita (Numero de horas)</label><br>
+      <input type="number" id="tiempo_estimado_cita" name="tiempo_estimado_cita" min="1" max="10">
     </div>
 
     <button id="enviar_cita" class="success" type="button" name="button">Crear</button>
@@ -49,7 +49,8 @@
     citas.obtener_clientes();
 
     $("#fecha_cita").datepicker({
-      dateFormat: 'yy-mm-dd'
+      dateFormat: 'yy-mm-dd',
+      minDate: 1
     });
 
     $("#hora_cita").wickedpicker({
