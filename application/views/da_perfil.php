@@ -2,7 +2,7 @@
   <div id="foto_perfil_contenedor" class="flex center-X center-Y">
     <div class="flex">
       <div class="">
-        <img src="<?php echo base_url("assets/img/perfil_da.jpg") ?>" alt="">
+        <img src="<?php echo $this->session->userdata("foto") ?>" alt="">
       </div>
 
       <div id="datos_dentistas" class="flex center-X">

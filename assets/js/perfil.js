@@ -10,7 +10,48 @@ function Perfil(){
   }
 
   var eventos = function(){
+    $("#formulario_editar_cuenta").submit(function(e){
+      var paso = validar_datos($("#nombre_cuenta").val(),$("#email_cuenta").val(),$("#nuevo_password").val(),$("#nuevo_password_confirmacion").val());
+      if(!paso){
+        swal("Cuidado","Llena todos los campos para continuar","warning");
+        e.preventDefaut();
+      }
+    });
+  }
 
+  var validar_datos = function(nombre,email,nuevo_pass,confirmar_pass){
+    var res_n = false;
+    var res_e = false;
+    var res_p = false;
+    var paso = false;
+
+    if(nombre != ""){
+      res_n = true;
+    }else{
+      $("#nombre_cuenta").addClass("campo_error");
+    }
+
+    if(email != ""){
+      res_e = true;
+    }else{
+      $("#email_cuenta").addClass("campo_error");
+    }
+
+    if(nuevo_pass == ""){
+      res_p = true;
+    }else{
+      if(nuevo_pass == confirmar_pass){
+        res_p = true;
+      }else{
+        $("#nuevo_password, #nuevo_password_confirmacion").addClass("campo_error");
+      }
+    }
+
+    if(res_n && res_e && res_p){
+      paso = true;
+    }
+
+    return paso;
   }
 
   this.obttener_datos_perfil = function(){
@@ -31,9 +72,17 @@ function Perfil(){
         $("#no_citas").html(data.no_pacientes + " CITAS PROXIMAS");
         $("#no_citas_hoy").html(data.no_citas_hoy + " CITAS HOY");
         $("#no_citas_manana").html(data.no_citas_manana + " CITAS MAÑANA");
+
+        $("#nombre_cuenta").val(data.dentista.nombre);
+        $("#email_cuenta").val(data.dentista.email);
+        $("#id_cuenta").val(data.dentista.iddentista);
       }else{
         swal("Error al obtener informacion","Reintentelo más tarde. Si el problema persiste contacte al administrador.","error");
       }
     });
+  }
+
+  this.llenar_datos_editar = function(){
+
   }
 }

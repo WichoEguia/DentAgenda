@@ -66,5 +66,69 @@ class Perfil extends CI_Controller {
 	  $citas = $this->Modelo->query("SELECT * FROM cita WHERE fecha = '" . substr($mañana, 10, 9) . "' AND dentista_id = " . $iddentista);
 		return count($citas);
 	}
+
+	public function editar(){
+		$this->load->view('main_layout_header', array('titulo' => 'Editar Cuenta', 'nombre' => $this->session->userdata("nombre")));
+		$this->load->view('main_layout_nav', array('item' => 1));
+		$this->load->view("da_editar_cuenta");
+		$this->load->view('main_layout_footer');
+	}
+
+	public function editar_datos_cuenta(){
+		$dentista_id = $this->input->post("id_cuenta");
+	  $nombre_cuenta = $this->input->post("nombre_cuenta");
+		$email_cuenta = $this->input->post("email_cuenta");
+		$pass = $this->input->post("nuevo_password");
+		// $foto_perfil = $this->input->post("foto_perfil");
+
+		$config["upload_path"] = "./assets/uploads/";
+		$config["allowed_types"] = "pdf|jpg|jpeg";
+		$config["file_name"] = "perfil_" . $dentista_id;
+		$config["image_type"] = "jpg";
+
+		$this->load->library('upload', $config);
+		@unlink(base_url("assets/uploads" . $this->upload->data("file_name")));
+
+		$userdata = [];
+		if($this->upload->do_upload("foto_perfil")){
+			$file = $this->upload->data("file_name");
+
+			if($pass == ""){
+				$userdata = [
+					"nombre" => $nombre_cuenta,
+					"email" => $email_cuenta,
+					"foto" => base_url("assets/uploads/" . $file)
+				];
+			}else{
+				$userdata = [
+					"nombre" => $nombre_cuenta,
+					"email" => $email_cuenta,
+					"password" => sha1($pass),
+					"foto" => base_url("assets/uploads/" . $file)
+				];
+			}
+		}else{
+			if($pass == ""){
+				$userdata = [
+					"nombre" => $nombre_cuenta,
+					"email" => $email_cuenta
+				];
+			}else{
+				$userdata = [
+					"nombre" => $nombre_cuenta,
+					"email" => $email_cuenta,
+					"password" => sha1($pass)
+				];
+			}
+		}
+
+		$this->Modelo->editar_reg("dentista",$userdata,"iddentista",$dentista_id);
+
+		$this->session->set_userdata($userdata);
+
+		echo var_dump($this->session->userdata());
+
+		// header("location: " . base_url("index.php/Perfil"));
+	}
 }
 ?>

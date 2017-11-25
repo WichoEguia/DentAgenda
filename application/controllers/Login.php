@@ -38,21 +38,23 @@ class Login extends CI_Controller {
       $this->Modelo->agregar_reg("dentista",array(
         "email" => $this->input->post("email"),
         "nombre" => $this->input->post("nombre"),
-        "password" => sha1($this->input->post("password"))
+        "password" => sha1($this->input->post("password")),
+				"foto" => base_url("assets/img/perfil_da.jpg")
       ));
 
-      $this->crear_sesion($this->db->insert_id(), $this->input->post("email"), $this->input->post("nombre"));
+      $this->crear_sesion($this->db->insert_id(), $this->input->post("email"), $this->input->post("nombre"), base_url("assets/img/perfil_da.jpg"));
       $resultado["resultado"] = true;
     }
 
     echo json_encode($resultado);
   }
 
-  public function crear_sesion($iddentista, $email, $nombre){
+  public function crear_sesion($iddentista, $email, $nombre, $foto){
     $userdata = array(
       "iddentista" => $iddentista,
       "email" => $email,
-      "nombre" => $nombre
+      "nombre" => $nombre,
+			"foto" => $foto
     );
 
     $this->session->set_userdata($userdata);
@@ -75,7 +77,7 @@ class Login extends CI_Controller {
       $resultado["resultado"] = true;
       $usuario = $usuario[0];
 
-      $this->crear_sesion($usuario->iddentista,$usuario->email,$usuario->nombre);
+      $this->crear_sesion($usuario->iddentista,$usuario->email,$usuario->nombre,$usuario->foto);
       $resultado["session"] = $this->session->userdata();
     }
 
