@@ -13,12 +13,13 @@ function Citas(){
     $("#enviar_cita").off();
     $("#select_cliente").off();
     $("#tiempo_estimado_cita").off();
+    $("#cantidad_elementos").off();
 
     $("#enviar_cita").click(function(){
       enivia_formulario();
     });
 
-    $("#tiempo_estimado_cita").change(function(){
+    $("#tiempo_estimado_cita, #cantidad_elementos").change(function(){
       if($(this).val() < 1){
         $(this).val(1);
       }
@@ -89,7 +90,8 @@ function Citas(){
             "cliente_id" : $("#select_cliente").val(),
             "descripcion" : $("#cita_descripcion").val(),
             "fecha" : $("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val()),
-            "tiempo_estimado" : $("#tiempo_estimado_cita").val()
+            "tiempo_estimado" : $("#tiempo_estimado_cita").val(),
+            "elemento" : $("#elemento_inventario").val()
           }
       }).done(function(data){
         data = JSON.parse(data);
@@ -152,6 +154,26 @@ function Citas(){
     }
 
     return paso;
+  }
+
+  this.obtener_elementos_inventario = function(){
+    $.ajax({
+        method : "POST",
+        url : base_url + "index.php/Citas/obtener_elementos_inventario",
+        async : true,
+        data : {}
+    }).done(function(data){
+      data = JSON.parse(data);
+      console.log(data);
+      if(data.resultado){
+        var c = "";
+        for(var i=0;i<data.elementos.length;i++){
+          c += "<option value=" + data.elementos[i].idproducto + " cantidad=" + data.elementos[i].cantidad + ">" + data.elementos[i].folio + " - " + data.elementos[i].nombre + "</option>";
+        }
+        $("#elemento_inventario").append(c);
+        eventos();
+      }
+    });
   }
 }
  /*

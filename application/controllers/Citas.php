@@ -44,6 +44,7 @@ class Citas extends CI_Controller {
 			$descripcion = $this->input->post("descripcion");
 			$fecha = $this->input->post("fecha");
 			$tiempo_estimado = $this->input->post("tiempo_estimado");
+			$elemento = $this->input->post("elemento");
 			$fecha_creacion = date("Y-m-d h:i:s");
 			$resultado["resultado"] = true;
 
@@ -55,8 +56,12 @@ class Citas extends CI_Controller {
 				"fecha_creacion" => $fecha_creacion,
 				"dentista_id" => $this->session->userdata("iddentista"),
 				"duracion" => $tiempo_estimado . "horas",
-				"contacto_id" => $id_cliente
+				"contacto_id" => $id_cliente,
+				"producto_id" => $elemento
 			));
+
+			$this->Modelo->query_no_result("UPDATE producto SET cantidad = cantidad - 1 WHERE idproducto = " . $elemento);
+			// echo $this->db->last_query();
 		}
 		echo json_encode($resultado);
 	}
@@ -69,6 +74,18 @@ class Citas extends CI_Controller {
 		if(count($contacto) > 0){
 			$resultado["resultado"] = true;
 			$resultado["path_foto"] = $contacto[0]->foto;
+		}
+
+		echo json_encode($resultado);
+	}
+
+	public function obtener_elementos_inventario(){
+	  $resultado["resultado"] = false;
+		$elementos_inventario = $this->Modelo->query("SELECT * FROM producto WHERE dentista_id = " . $this->session->userdata("iddentista"));
+
+		if(count($elementos_inventario) > 0){
+			$resultado["resultado"] = true;
+			$resultado["elementos"] = $elementos_inventario;
 		}
 
 		echo json_encode($resultado);

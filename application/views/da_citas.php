@@ -30,6 +30,13 @@
       <input type="number" id="tiempo_estimado_cita" name="tiempo_estimado_cita" min="1" max="10">
     </div>
 
+    <div class="field">
+      <label for="elemento_inventario">Elemento de Inventario</label><br>
+      <select id="elemento_inventario" name="elemento_inventario">
+        <option value="" disabled selected>Selecciona</option>
+      </select>
+    </div>
+
     <button id="enviar_cita" class="success" type="button" name="button">Crear</button>
   </div>
 
@@ -47,6 +54,7 @@
     citas.eventos_();
     citas.setUrl(base_url);
     citas.obtener_clientes();
+    citas.obtener_elementos_inventario();
 
     $("#fecha_cita").datepicker({
       dateFormat: 'yy-mm-dd',
