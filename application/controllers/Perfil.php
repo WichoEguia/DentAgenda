@@ -79,7 +79,6 @@ class Perfil extends CI_Controller {
 	  $nombre_cuenta = $this->input->post("nombre_cuenta");
 		$email_cuenta = $this->input->post("email_cuenta");
 		$pass = $this->input->post("nuevo_password");
-		// $foto_perfil = $this->input->post("foto_perfil");
 
 		$config["upload_path"] = "./assets/uploads/";
 		$config["allowed_types"] = "pdf|jpg|jpeg";
@@ -128,7 +127,7 @@ class Perfil extends CI_Controller {
 
 		echo var_dump($this->session->userdata());
 
-		// header("location: " . base_url("index.php/Perfil"));
+		header("location: " . base_url("index.php/Perfil"));
 	}
 }
 ?>

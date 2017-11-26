@@ -78,3 +78,17 @@ input[type="submit"]{
     padding: 0;
   }
 }
+
+.texto_error{
+  color: $color_peligro;
+  font-size: .8rem;
+  display: none;
+
+  &.activo{
+    display: block !important;
+  }
+}
+
+.obligatorio{
+  color: $color_peligro;
+}

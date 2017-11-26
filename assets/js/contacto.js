@@ -39,13 +39,13 @@ function Contacto(){
       // console.log("ggg");
 
       $("input,select").removeClass("campo_error");
+      $(".texto_error").hide();
 
       var paso = valida_datos(folio,nombre,telefono,email,alergias,sexo,sangre);
-      // alert(paso)
 
       if(!paso){
         e.preventDefault();
-        swal("¡Cuidado!","Revisa todos los campos para continuar.","warning");
+        swal("¡Cuidado!","Revisa todos los campos para continuar.","error");
       }
     });
 
@@ -103,80 +103,49 @@ function Contacto(){
     var re = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     var resultado = false;
 
-    if(folio != "" && folio.length == 4){
+    if(folio != ""){
       res_f = true;
     }else{
       $("#folio_contacto").addClass("campo_error");
+      $("#folio_contacto").parent().find(".texto_error").addClass("activo");
     }
 
     if(nombre != ""){
       res_n = true;
     }else{
       $("#nombre_contacto").addClass("campo_error");
+      $("#nombre_contacto").parent().find(".texto_error").addClass("activo");
     }
 
     if(telefono != ""){
       res_tel = true;
     }else{
       $("#telefono_contacto").addClass("campo_error");
-    }
-
-    // if(tipo != ""){
-    //   res_t = true;
-    //   console.log(tipo);
-    //   if(tipo == "cliente"){
-    //     if(alergias != ""){
-    //       res_a = true;
-    //     }else{
-    //       $("#alergias_contacto").addClass("campo_error");
-    //     }
-    //
-    //     if(sangre != ""){
-    //       res_sang = true;
-    //     }else{
-    //       $("#select_tipo_sangre_contacto").addClass("campo_error");
-    //     }
-    //   }else{
-    //     if(alergias == ""){
-    //       res_a = true;
-    //     }
-    //
-    //     if(sangre == ""){
-    //       res_sang = true;
-    //     }
-    //   }
-    // }else{
-    //   $("#select_tipo_contacto").addClass("campo_error");
-    // }
-
-    if(alergias != ""){
-      res_a = true;
-    }else{
-      $("#alergias_contacto").addClass("campo_error");
+      $("#telefono_contacto").parent().find(".texto_error").addClass("activo");
     }
 
     if(sangre != null){
       res_sang = true;
     }else{
       $("#select_tipo_sangre_contacto").addClass("campo_error");
+      $("#select_tipo_sangre_contacto").parent().find(".texto_error").addClass("activo");
     }
 
     if(re.test(email) || email == ""){
       res_e = true;
     }else{
       $("#email_contacto").addClass("campo_error");
+      $("#email_contacto").parent().find(".texto_error").addClass("activo");
     }
 
     if(sexo != null){
       res_s = true;
     }else{
       $("#select_sexo_contacto").addClass("campo_error");
+      $("#select_sexo_contacto").parent().find(".texto_error").addClass("activo");
     }
 
-    console.log(res_s);
-    console.log(res_sang);
-
-    if(res_f && res_n && res_tel && res_e && res_a && res_s && res_sang){
+    if(res_f && res_n && res_tel && res_e && res_s && res_sang){
       resultado = true;
     }
 

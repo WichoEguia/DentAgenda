@@ -63,6 +63,7 @@ function Inventario(){
 
   var enviar_formulario = function(){
     $(".validable").removeClass("campo_error");
+    $(".texto_error").hide();
     var pase = validar_campos($("#nombre_producto").val(),$("#producto_descripcion").val(),$("#cantidad_producto").val(),$("#fecha_restock").val());
 
     if(pase){
@@ -97,24 +98,28 @@ function Inventario(){
       res_n = true;
     }else{
       $("#nombre_producto").addClass("campo_error");
+      $("#nombre_producto").parent().find(".texto_error").addClass("activo");
     }
 
     if(descripcion != ""){
       res_d = true;
     }else{
       $("#producto_descripcion").addClass("campo_error");
+      $("#producto_descripcion").parent().find(".texto_error").addClass("activo");
     }
 
     if(cantidad != 0){
       res_c = true;
     }else{
       $("#cantidad_producto").addClass("campo_error");
+      $("#cantidad_producto").parent().find(".texto_error").addClass("activo");
     }
 
     if(fecha_restock != ""){
       res_f = true;
     }else{
       $("#fecha_restock").addClass("campo_error");
+      $("#fecha_restock").parent().find(".texto_error").addClass("activo");
     }
 
     if(res_n && res_d && res_c && res_f){

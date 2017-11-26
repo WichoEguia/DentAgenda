@@ -282,6 +282,20 @@ input[type="submit"].success:active {
   padding: 0;
 }
 
+.texto_error {
+  color: #ff0a17;
+  font-size: .8rem;
+  display: none;
+}
+
+.texto_error.activo {
+  display: block !important;
+}
+
+.obligatorio {
+  color: #ff0a17;
+}
+
 #login_main_container {
   width: 100vw;
   height: 100vh;
@@ -380,7 +394,8 @@ input[type="submit"].success:active {
           flex: 1;
 }
 
-.campo_error {
+.campo_error,
+.errror {
   border: 0.5px solid #ff0a17 !important;
 }
 

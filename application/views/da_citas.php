@@ -1,17 +1,19 @@
 <div class="flex">
   <div class="">
     <div class="field">
-      <label for="cita_cliente">Nombre del paciente</label><br>
+      <span class="obligatorio">*</span><label for="cita_cliente">Nombre del paciente</label><br>
       <select class="validable" id="select_cliente" name="cita_cliente"></select>
+      <p class="texto_error">Seleccione un elemento de la lista.</p>
     </div>
 
     <div class="field">
-      <label for="cita_descripcion">Descripción de la cita</label><br>
+      <span class="obligatorio">*</span><label for="cita_descripcion">Descripción de la cita</label><br>
       <textarea class="validable" id="cita_descripcion" name="cita_descripcion" rows="5" cols="50"></textarea>
+      <p class="texto_error">Cada cita necesita llevar una descripción.</p>
     </div>
 
     <div class="field">
-      <label for="cita_fecha">Fecha y hora de cita</label><br>
+      <span class="obligatorio">*</span><label for="cita_fecha">Fecha y hora de cita</label><br>
       <div class="flex">
         <div class="input_icono">
           <i class="fa fa-calendar"></i>
@@ -23,11 +25,12 @@
           <input class="validable" type="text" id="hora_cita" placeholder="seleccionar hora">
         </div>
       </div>
+      <p class="texto_error">Asigne una fecha y una hora para la cita.</p>
     </div>
 
     <div class="field">
-      <label for="tiempo_estimado_cita">Tiempo estimado de cita (Numero de horas)</label><br>
-      <input type="number" id="tiempo_estimado_cita" name="tiempo_estimado_cita" min="1" max="10">
+      <span class="obligatorio">*</span><label for="tiempo_estimado_cita">Tiempo estimado de cita (Numero de horas)</label><br>
+      <input type="number" id="tiempo_estimado_cita" name="tiempo_estimado_cita" value="1" min="1" max="10">
     </div>
 
     <div class="field">

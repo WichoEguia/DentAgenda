@@ -26,6 +26,10 @@
 
     <div id="informacion_usuario" class="flex center-Y">
       <div id="informacion_usuario_nombre">
+        <?php
+          $nombre = explode(" ", $nombre);
+          $nombre = $nombre[0] . " " . $nombre[1];
+        ?>
         <p>Bienvenido, <?php echo $nombre ?></p>
         <p id="full_date">--/--/---- --:--</p>
       </div>

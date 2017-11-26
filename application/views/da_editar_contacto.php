@@ -4,26 +4,30 @@
       <input type="hidden" name="idcontacto" value="<?php echo isset($idcontacto) ? $idcontacto : "" ?>">
 
       <div class="field">
-        <label for="folio_contacto">Folio</label><br>
+        <span class="obligatorio">*</span><label for="folio_contacto">Folio</label><br>
         <input type="text" name="folio_contacto" id="folio_contacto" value="<?php echo isset($folio) ? $folio : "" ?>">
+        <p class="texto_error">Ingrese un folio.</p>
       </div>
 
       <div class="flex">
         <div class="field">
-          <label for="nombre_contacto">Nombre</label><br>
+          <span class="obligatorio">*</span><label for="nombre_contacto">Nombre</label><br>
           <input type="text" name="nombre_contacto" id="nombre_contacto" value="<?php echo isset($nombre) ? $nombre : "" ?>">
+          <p class="texto_error">Este campo es obligatorio.</p>
         </div>
 
         <div style="margin-left: 10px;" class="field">
           <label for="email_contacto">Email</label><br>
           <input type="text" name="email_contacto" id="email_contacto" value="<?php echo isset($email) ? $email : "" ?>">
+          <p class="texto_error">El correo es invalido.</p>
         </div>
       </div>
 
       <div class="flex">
         <div class="field">
-          <label for="telefono_contacto">Telefono</label><br>
+          <span class="obligatorio">*</span><label for="telefono_contacto">Telefono</label><br>
           <input type="text" name="telefono_contacto" id="telefono_contacto" value="<?php echo isset($telefono_principal) ? $telefono_principal : "" ?>">
+          <p class="texto_error">Se necesita un telefono de contacto.</p>
         </div>
 
         <div style="margin-left: 10px;" class="field">
@@ -31,15 +35,6 @@
           <input type="text" name="telefono_secundario_contacto" id="telefono_secundario_contacto" value="<?php echo isset($telefono_auxiliar) ? $telefono_auxiliar : "" ?>">
         </div>
       </div>
-
-      <!-- <div class="field">
-        <label for="tipo_contacto">Tipo de contacto</label>
-        <select id="select_tipo_contacto" name="tipo_contacto" value="<?php echo isset($tipo_contacto) ? $tipo_contacto : "" ?>">
-          <option disabled value="">Seleccione</option>
-          <option value="cliente">Paciente</option>
-          <option value="proveedor">Proveedor</option>
-        </select>
-      </div> -->
 
       <div class="field" id="field_alergias_contacto">
         <label for="alergias_contacto">Alergias</label><br>
@@ -49,9 +44,9 @@
       <input type="submit" class="success" value="Guardar">
     </div>
 
-    <div class="">
+    <div class="field" style="margin-left: 10px;">
       <div class="field" id="sangre_contacto">
-        <label for="tipo_sangre_contacto">Tipo de sangre</label>
+        <span class="obligatorio">*</span><label for="tipo_sangre_contacto">Tipo de sangre</label><br>
         <select id="select_tipo_sangre_contacto" name="tipo_sangre_contacto" value="<?php echo isset($tipo_sangre) ? $tipo_sangre : "" ?>">
           <option disabled value="">Seleccione</option>
           <option value="A">A</option>
@@ -59,15 +54,17 @@
           <option value="AB">AB</option>
           <option value="O">O</option>
         </select>
+        <p class="texto_error">Seleccione una opcion.</p>
       </div>
 
       <div class="field" id="field_sexofoto_contacto">
-        <label for="sexo_contacto">Sexo de contacto</label>
+        <span class="obligatorio">*</span><label for="sexo_contacto">Sexo de contacto</label><br>
         <select id="select_sexo_contacto" name="sexo_contacto" value="<?php echo isset($sexo) ? $sexo : "" ?>">
           <option disabled value="">Seleccione</option>
           <option value="hombre">Masculino</option>
           <option value="mujer">Femenino</option>
         </select>
+        <p class="texto_error">Seleccione una opcion.</p>
       </div>
 
       <div class="field" id="field_foto_contacto">

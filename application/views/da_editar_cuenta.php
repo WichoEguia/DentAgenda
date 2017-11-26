@@ -3,18 +3,20 @@
     <input type="hidden" name="id_cuenta" id="id_cuenta" value="">
 
     <div class="field">
-      <label for="nombre_cuenta">Nombre</label><br>
+      <span class="obligatorio">*</span><label for="nombre_cuenta">Nombre</label><br>
       <input type="text" name="nombre_cuenta" id="nombre_cuenta" value="">
+      <p class="texto_error">Este campo es obligatorio.</p>
     </div>
 
     <div class="field">
-      <label for="email_cuenta">Email</label><br>
+      <span class="obligatorio">*</span><label for="email_cuenta">Email</label><br>
       <input type="text" name="email_cuenta" id="email_cuenta" value="">
+      <p class="texto_error">Ingrese un email valido.</p>
     </div>
 
     <div class="field">
       <label for="foto_perfil">Foto de perfil</label><br>
-      <input type="file" name="foto_perfil" id="foto_perfil" value="">
+      <input type="file" name="foto_perfil" id="foto_perfil">
     </div>
 
     <div class="field">
@@ -25,9 +27,11 @@
     <div class="field">
       <label for="nuevo_password_confirmacion">Confirmar Contraseña</label><br>
       <input type="password" name="nuevo_password_confirmacion" id="nuevo_password_confirmacion">
+      <p class="texto_error">Las contraseñas no coinciden.</p>
     </div>
 
-    <input type="submit" id="enviar_cambio_cuenta" name="enviar_cambio_cuenta" value="Guardar" class="success">
+    <input type="submit" value="Guardar" class="success">
+    <!-- <button type="button" id="enviar_cambio_cuenta">enviar</button> -->
   </form>
 </div>
 

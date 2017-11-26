@@ -38,7 +38,7 @@ class Inventario extends CI_Controller {
 
 	public function nuevo_producto(){
 		$this->load->view('main_layout_header', array('titulo' => 'Nuevo Producto', 'nombre' => $this->session->userdata("nombre")));
-		$this->load->view('main_layout_nav');
+		$this->load->view('main_layout_nav', array('item' => 0));
 		$this->load->view("da_productos");
 		$this->load->view('main_layout_footer');
 	}

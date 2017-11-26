@@ -47,6 +47,7 @@ class Citas extends CI_Controller {
 			$elemento = $this->input->post("elemento");
 			$fecha_creacion = date("Y-m-d h:i:s");
 			$resultado["resultado"] = true;
+			$fecha_fin = date("Y-m-d H:i:s",strtotime("+ " . $tiempo_estimado . " hours",strtotime($fecha)));
 
 			$this->Modelo->agregar_reg("cita", array(
 				"folio_cita" => "000000",
@@ -54,14 +55,14 @@ class Citas extends CI_Controller {
 				"fecha" => $fecha,
 				"estatus" => "activo",
 				"fecha_creacion" => $fecha_creacion,
+				"fecha_fin" => $fecha_fin,
 				"dentista_id" => $this->session->userdata("iddentista"),
-				"duracion" => $tiempo_estimado . "horas",
+				"duracion" => $tiempo_estimado,
 				"contacto_id" => $id_cliente,
 				"producto_id" => $elemento
 			));
 
 			$this->Modelo->query_no_result("UPDATE producto SET cantidad = cantidad - 1 WHERE idproducto = " . $elemento);
-			// echo $this->db->last_query();
 		}
 		echo json_encode($resultado);
 	}
@@ -86,6 +87,29 @@ class Citas extends CI_Controller {
 		if(count($elementos_inventario) > 0){
 			$resultado["resultado"] = true;
 			$resultado["elementos"] = $elementos_inventario;
+		}
+
+		echo json_encode($resultado);
+	}
+
+	public function valida_fecha(){
+		$resultado["resultado"] = false;
+		$tiempo_estimado = $this->input->post("tiempo_estimado");
+
+		$fecha_inicio = $this->input->post("fecha");
+		$fecha_fin = date("Y-m-d H:i:s",strtotime("+ " . $tiempo_estimado . " hours",strtotime($fecha_inicio)));
+
+		$dentista_id = $this->session->userdata("iddentista");
+
+		$query = "SELECT * FROM cita ";
+		$query .= "WHERE '" . $fecha_inicio . "' >= fecha AND '" . $fecha_inicio . "' <= fecha_fin ";
+		$query .= "OR '" . $fecha_fin . "' <= fecha_fin AND '" . $fecha_fin . "' >= fecha ";
+		$query .= "AND estatus = 'alta' AND dentista_id = " . $dentista_id;
+
+		$citas =$this->Modelo->query($query);
+
+		if(count($citas) > 0){
+			$resultado["resultado"] = true;
 		}
 
 		echo json_encode($resultado);

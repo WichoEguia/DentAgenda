@@ -10,11 +10,17 @@ function Perfil(){
   }
 
   var eventos = function(){
+    $("#formulario_editar_cuenta").off();
+
     $("#formulario_editar_cuenta").submit(function(e){
       var paso = validar_datos($("#nombre_cuenta").val(),$("#email_cuenta").val(),$("#nuevo_password").val(),$("#nuevo_password_confirmacion").val());
+
+      $("input,select").removeClass("campo_error");
+      $(".texto_error").hide();
+
       if(!paso){
-        swal("Cuidado","Llena todos los campos para continuar","warning");
-        e.preventDefaut();
+        e.preventDefault();
+        swal("Cuidado","Llena todos los campos para continuar","error");
       }
     });
   }
@@ -24,17 +30,20 @@ function Perfil(){
     var res_e = false;
     var res_p = false;
     var paso = false;
+    var re = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
     if(nombre != ""){
       res_n = true;
     }else{
-      $("#nombre_cuenta").addClass("campo_error");
+      $("#nombre_cuenta").addClass("errror");
+      $("#nombre_cuenta").parent().find(".texto_error").addClass("activo");
     }
 
-    if(email != ""){
+    if(re.test(email) || email == ""){
       res_e = true;
     }else{
-      $("#email_cuenta").addClass("campo_error");
+      $("#email_cuenta").addClass("errror");
+      $("#email_cuenta").parent().find(".texto_error").addClass("activo");
     }
 
     if(nuevo_pass == ""){
@@ -43,7 +52,8 @@ function Perfil(){
       if(nuevo_pass == confirmar_pass){
         res_p = true;
       }else{
-        $("#nuevo_password, #nuevo_password_confirmacion").addClass("campo_error");
+        $("#nuevo_password, #nuevo_password_confirmacion").addClass("errror");
+        $("#nuevo_password, #nuevo_password_confirmacion").parent().find(".texto_error").addClass("activo");
       }
     }
 

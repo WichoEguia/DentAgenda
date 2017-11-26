@@ -80,37 +80,8 @@ function Citas(){
 
   var enivia_formulario = function(){
     $(".validable").removeClass("campo_error");
-    var pase = validar_campos($("#select_cliente").val(),$("#cita_descripcion").val(),$("#fecha_cita").val(),$("#hora_cita").val());
-    if(pase){
-      $.ajax({
-          method : "POST",
-          url : base_url + "index.php/Citas/crear_nueva_cita",
-          async : true,
-          data : {
-            "cliente_id" : $("#select_cliente").val(),
-            "descripcion" : $("#cita_descripcion").val(),
-            "fecha" : $("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val()),
-            "tiempo_estimado" : $("#tiempo_estimado_cita").val(),
-            "elemento" : $("#elemento_inventario").val()
-          }
-      }).done(function(data){
-        data = JSON.parse(data);
-        if(data.resultado){
-          swal("Todo correcto","Los datos fueron enviados correctamente.","success").then(function(){
-            $("#select_cliente").val("");
-            $("#cita_descripcion").val("");
-            $("#fecha_cita").val("");
-            $("#hora_cita").val("");
-            $("#tiempo_estimado_cita").val("");
-            $("#foto_contacto").html("");
-          });
-        }else{
-          swal("Error al enviar el formulario","Intentalo nuevamente más tarde.","error");
-        }
-      });
-    }else{
-      swal("No se puede enviar el formulario","Asegurate de llenar todos los campos para continuar.","error");
-    }
+    $(".texto_error").hide();
+    valida_fecha($("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val()));
   }
 
   var convertir_ampm_24 = function(time){
@@ -125,28 +96,34 @@ function Citas(){
     var res_h = false;
     var paso = false;
 
-    if(cliente != ""){
+    if(cliente != null){
       res_c = true;
     }else{
       $("#select_cliente").addClass("campo_error");
+      $("#select_cliente").parent().find(".texto_error").addClass("activo");
     }
 
     if(descripcion != ""){
       res_d = true;
     }else{
       $("#cita_descripcion").addClass("campo_error");
+      $("#cita_descripcion").parent().find(".texto_error").addClass("activo");
     }
 
     if(fecha != ""){
       res_f = true;
     }else{
-      $("#fecha_cita").addClass("campo_error");
+      $("#fecha_cita").parent().addClass("campo_error");
+      $("#hora_cita").parent().addClass("campo_error");
+      $("#fecha_cita").parent().parent().parent().find(".texto_error").addClass("activo");
     }
 
     if(hora != ""){
       res_h = true;
     }else{
-      $("#hora_cita").addClass("campo_error");
+      $("#fecha_cita").parent().addClass("campo_error");
+      $("#hora_cita").parent().addClass("campo_error");
+      $("#fecha_cita").parent().parent().parent().find(".texto_error").addClass("activo");
     }
 
     if(res_c && res_d && res_f && res_h){
@@ -172,6 +149,56 @@ function Citas(){
         }
         $("#elemento_inventario").append(c);
         eventos();
+      }
+    });
+  }
+
+  var valida_fecha = function(full_date){
+    $.ajax({
+        method : "POST",
+        url : base_url + "index.php/Citas/valida_fecha",
+        async : true,
+        data : {
+          fecha : full_date,
+          tiempo_estimado : $("#tiempo_estimado_cita").val()
+        }
+    }).done(function(data){
+      data = JSON.parse(data);
+
+      if(!data.resultado){
+        var pase = validar_campos($("#select_cliente").val(),$("#cita_descripcion").val(),$("#fecha_cita").val(),$("#hora_cita").val());
+        if(pase){
+          $.ajax({
+              method : "POST",
+              url : base_url + "index.php/Citas/crear_nueva_cita",
+              async : true,
+              data : {
+                "cliente_id" : $("#select_cliente").val(),
+                "descripcion" : $("#cita_descripcion").val(),
+                "fecha" : $("#fecha_cita").val() + " " + convertir_ampm_24($("#hora_cita").val()),
+                "tiempo_estimado" : $("#tiempo_estimado_cita").val(),
+                "elemento" : $("#elemento_inventario").val()
+              }
+          }).done(function(data){
+            data = JSON.parse(data);
+            if(data.resultado){
+              swal("Todo correcto","Los datos fueron enviados correctamente.","success").then(function(){
+                $("#select_cliente").val("");
+                $("#cita_descripcion").val("");
+                $("#fecha_cita").val("");
+                $("#hora_cita").val("");
+                $("#tiempo_estimado_cita").val("1");
+                $("#foto_contacto").html("");
+              });
+            }else{
+              swal("Error al enviar el formulario","Intentalo nuevamente más tarde.","error");
+            }
+          });
+        }else{
+          swal("No se puede enviar el formulario","Asegurate de llenar todos los campos para continuar.","error");
+        }
+      }else{
+        swal("Cuidado!","La fecha ya ha sido usada con anterioridad para otra cita. Intente con una fecha diferente.","error");
       }
     });
   }
