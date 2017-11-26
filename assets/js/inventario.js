@@ -53,7 +53,8 @@ function Inventario(){
       c += "  <td>" + productos[i].folio + "</td>";
       c += "  <td>" + productos[i].nombre + "</td>";
       c += "  <td>" + productos[i].descripcion + "</td>";
-      c += "  <td>" + productos[i].cantidad + "</td>";
+      // c += "  <td>" + productos[i].cantidad + "</td>";
+      c += productos[i].cantidad < 0 ? "<td>0</td>" : "<td>" + productos[i].cantidad + "</td>";
       c += "  <td>" + productos[i].restock + "</td>";
       c += productos[i].cantidad > 0 ? "<td></td>" : "<td>No hay elementos</td>";
       c += "</tr>";

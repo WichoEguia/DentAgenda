@@ -62,7 +62,9 @@ class Citas extends CI_Controller {
 				"producto_id" => $elemento
 			));
 
-			$this->Modelo->query_no_result("UPDATE producto SET cantidad = cantidad - 1 WHERE idproducto = " . $elemento);
+			if($elemento){
+				$this->Modelo->query_no_result("UPDATE producto SET cantidad = cantidad - 1 WHERE idproducto = " . $elemento);
+			}
 		}
 		echo json_encode($resultado);
 	}

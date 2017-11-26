@@ -37,39 +37,53 @@ class Contactos extends CI_Controller {
 		$email = $this->input->post("email_contacto");
 		$telefono = $this->input->post("telefono_contacto");
 		$telefono_secundario = $this->input->post("telefono_secundario_contacto");
-		// $tipo = $this->input->post("tipo_contacto");
 		$alergias = $this->input->post("alergias_contacto");
 		$sexo = $this->input->post("sexo_contacto");
 		$foto_contacto = $this->input->post("foto_contacto");
 		$sangre = $this->input->post("tipo_sangre_contacto");
 
 		$config['upload_path']          = './assets/uploads/';
-    $config['allowed_types']        = 'gif|jpg|png';
+    $config['allowed_types']        = 'jpeg|jpg|png';
 		$config["file_name"]						= "imagen_perfil-" . time();
+		$config["image_type"] = "jpg";
 
     $this->load->library('upload', $config);
-		$this->upload->do_upload('foto_contacto');
-		$image_data = $this->upload->data();
-		echo var_dump($image_data["file_name"]);
-		echo $this->upload->display_errors();
 
-		$foto_path = base_url("assets/uploads/" . $image_data["file_name"]);
+		if($this->upload->do_upload('foto_contacto')){
+			echo var_dump("si");
+			$file = $this->upload->data("file_name");
 
-		$this->Modelo->agregar_reg("contacto",array(
-			"folio" => $folio,
-			"nombre" => $nombre,
-			"email" => $email,
-			"telefono_principal" => $telefono,
-			"telefono_auxiliar" => $telefono_secundario,
-			// "tipo_contacto" => $tipo,
-			"activar_recordatorios" => "no",
-			"estatus" => "activo",
-			"alergias" => $alergias,
-			"sexo" => $sexo,
-			"foto" => $foto_path,
-			"tipo_sangre" => $sangre,
-			"dentista_id" => $this->session->userdata("iddentista")
-		));
+			$this->Modelo->agregar_reg("contacto",array(
+				"folio" => $folio,
+				"nombre" => $nombre,
+				"email" => $email,
+				"telefono_principal" => $telefono,
+				"telefono_auxiliar" => $telefono_secundario,
+				"activar_recordatorios" => "no",
+				"estatus" => "activo",
+				"alergias" => $alergias,
+				"sexo" => $sexo,
+				"foto" => base_url("assets/uploads/" . $file),
+				"tipo_sangre" => $sangre,
+				"dentista_id" => $this->session->userdata("iddentista")
+			));
+		}else{
+			echo var_dump("no");
+			$this->Modelo->agregar_reg("contacto",array(
+				"folio" => $folio,
+				"nombre" => $nombre,
+				"email" => $email,
+				"telefono_principal" => $telefono,
+				"telefono_auxiliar" => $telefono_secundario,
+				"activar_recordatorios" => "no",
+				"estatus" => "activo",
+				"alergias" => $alergias,
+				"sexo" => $sexo,
+				"foto" => base_url("assets\img\perfil_da_temporal.jpg"),
+				"tipo_sangre" => $sangre,
+				"dentista_id" => $this->session->userdata("iddentista")
+			));
+		}
 
 		header("Location: " . base_url("index.php/Contactos"));
 	}
@@ -124,12 +138,53 @@ class Contactos extends CI_Controller {
 	}
 
 	public function edita_contacto(){
+		// $folio = $this->input->post("folio_contacto");
+		// $nombre = $this->input->post("nombre_contacto");
+		// $email = $this->input->post("email_contacto");
+		// $telefono = $this->input->post("telefono_contacto");
+		// $telefono_secundario = $this->input->post("telefono_secundario_contacto");
+		// $alergias = $this->input->post("alergias_contacto");
+		// $sexo = $this->input->post("sexo_contacto");
+		// $foto_contacto = $this->input->post("foto_contacto");
+		// $sangre = $this->input->post("tipo_sangre_contacto");
+		// $idcontacto = $this->input->post("idcontacto");
+    //
+		// $config['upload_path']          = './assets/uploads/';
+    // $config['allowed_types']        = 'gif|jpg|png';
+		// $config["file_name"]						= "imagen_perfil-" . time();
+    //
+    // $this->load->library('upload', $config);
+		// $this->upload->do_upload('foto_contacto');
+		// $image_data = $this->upload->data();
+		// echo var_dump($image_data["file_name"]);
+    //
+		// echo $this->upload->display_errors();
+    //
+		// $foto_path = base_url("assets/uploads/" . $image_data["file_name"]);
+    //
+		// $this->Modelo->editar_reg("contacto",array(
+		// 	"folio" => $folio,
+		// 	"nombre" => $nombre,
+		// 	"email" => $email,
+		// 	"telefono_principal" => $telefono,
+		// 	"telefono_auxiliar" => $telefono_secundario,
+		// 	// "tipo_contacto" => $tipo,
+		// 	"activar_recordatorios" => "no",
+		// 	"estatus" => "activo",
+		// 	"alergias" => $alergias,
+		// 	"sexo" => $sexo,
+		// 	"foto" => $foto_path,
+		// 	"tipo_sangre" => $sangre,
+		// 	"dentista_id" => $this->session->userdata("iddentista")
+		// ),"idcontacto",$idcontacto);
+    //
+		// header("Location: " . base_url("index.php/Contactos"));
+
 		$folio = $this->input->post("folio_contacto");
 		$nombre = $this->input->post("nombre_contacto");
 		$email = $this->input->post("email_contacto");
 		$telefono = $this->input->post("telefono_contacto");
 		$telefono_secundario = $this->input->post("telefono_secundario_contacto");
-		// $tipo = $this->input->post("tipo_contacto");
 		$alergias = $this->input->post("alergias_contacto");
 		$sexo = $this->input->post("sexo_contacto");
 		$foto_contacto = $this->input->post("foto_contacto");
@@ -137,36 +192,46 @@ class Contactos extends CI_Controller {
 		$idcontacto = $this->input->post("idcontacto");
 
 		$config['upload_path']          = './assets/uploads/';
-    $config['allowed_types']        = 'gif|jpg|png';
-    $config['max_size']             = 4096;
-    $config['max_width']            = 1024;
-    $config['max_height']           = 768;
+    $config['allowed_types']        = 'jpeg|jpg|png';
 		$config["file_name"]						= "imagen_perfil-" . time();
+		$config["image_type"] = "jpg";
 
     $this->load->library('upload', $config);
-		$this->upload->do_upload('foto_contacto');
-		$image_data = $this->upload->data();
-		echo var_dump($image_data["file_name"]);
 
-		echo $this->upload->display_errors();
+		if($this->upload->do_upload('foto_contacto')){
+			echo var_dump("si");
+			$file = $this->upload->data("file_name");
 
-		$foto_path = base_url("assets/uploads/" . $image_data["file_name"]);
-
-		$this->Modelo->editar_reg("contacto",array(
-			"folio" => $folio,
-			"nombre" => $nombre,
-			"email" => $email,
-			"telefono_principal" => $telefono,
-			"telefono_auxiliar" => $telefono_secundario,
-			// "tipo_contacto" => $tipo,
-			"activar_recordatorios" => "no",
-			"estatus" => "activo",
-			"alergias" => $alergias,
-			"sexo" => $sexo,
-			"foto" => $foto_path,
-			"tipo_sangre" => $sangre,
-			"dentista_id" => $this->session->userdata("iddentista")
-		),"idcontacto",$idcontacto);
+			$this->Modelo->editar_reg("contacto",array(
+				"folio" => $folio,
+				"nombre" => $nombre,
+				"email" => $email,
+				"telefono_principal" => $telefono,
+				"telefono_auxiliar" => $telefono_secundario,
+				"activar_recordatorios" => "no",
+				"estatus" => "activo",
+				"alergias" => $alergias,
+				"sexo" => $sexo,
+				"foto" => base_url("assets/uploads/" . $file),
+				"tipo_sangre" => $sangre,
+				"dentista_id" => $this->session->userdata("iddentista")
+			),"idcontacto",$idcontacto);
+		}else{
+			echo var_dump("no");
+			$this->Modelo->editar_reg("contacto",array(
+				"folio" => $folio,
+				"nombre" => $nombre,
+				"email" => $email,
+				"telefono_principal" => $telefono,
+				"telefono_auxiliar" => $telefono_secundario,
+				"activar_recordatorios" => "no",
+				"estatus" => "activo",
+				"alergias" => $alergias,
+				"sexo" => $sexo,
+				"tipo_sangre" => $sangre,
+				"dentista_id" => $this->session->userdata("iddentista")
+			),"idcontacto",$idcontacto);
+		}
 
 		header("Location: " . base_url("index.php/Contactos"));
 	}
