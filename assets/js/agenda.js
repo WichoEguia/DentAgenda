@@ -11,6 +11,7 @@ function Agenda(){
 
   var eventos = function(){
     $(".eliminar_evento").off();
+    $(".editar_evento").off();
 
     $(".eliminar_evento").click(function(){
       var idcita = $(this).parent().parent().find(".idcita").val();
@@ -29,6 +30,11 @@ function Agenda(){
           $("#" + idelemento).remove();
         }
       });
+    });
+
+    $(".editar_evento").click(function(){
+      var idcita = $(this).parent().parent().find(".idcita").val();
+      window.location.href = base_url + "index.php/Citas/editar_cita/?id=" + idcita;
     });
   }
 

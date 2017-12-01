@@ -69,6 +69,40 @@ class Citas extends CI_Controller {
 		echo json_encode($resultado);
 	}
 
+	public function enviar_editar_cita(){
+		$resultado["resultado"] = false;
+
+		if($this->input->post("cliente_id") && $this->input->post("descripcion") && $this->input->post("fecha")){
+			$id_cita = $this->input->post("idcita");
+			$id_cliente = $this->input->post("cliente_id");
+			$descripcion = $this->input->post("descripcion");
+			$fecha = $this->input->post("fecha");
+			$tiempo_estimado = $this->input->post("tiempo_estimado");
+			$elemento = $this->input->post("elemento");
+			$fecha_creacion = date("Y-m-d h:i:s");
+			$resultado["resultado"] = true;
+			$fecha_fin = date("Y-m-d H:i:s",strtotime("+ " . $tiempo_estimado . " hours",strtotime($fecha)));
+
+			$this->Modelo->editar_reg("cita", array(
+				"folio_cita" => "000000",
+				"descripcion" => $descripcion,
+				"fecha" => $fecha,
+				"estatus" => "activo",
+				"fecha_creacion" => $fecha_creacion,
+				"fecha_fin" => $fecha_fin,
+				"dentista_id" => $this->session->userdata("iddentista"),
+				"duracion" => $tiempo_estimado,
+				"contacto_id" => $id_cliente,
+				"producto_id" => $elemento
+			), "idcita", $id_cita);
+
+			if($elemento){
+				$this->Modelo->query_no_result("UPDATE producto SET cantidad = cantidad - 1 WHERE idproducto = " . $elemento);
+			}
+		}
+		echo json_encode($resultado);
+	}
+
 	public function obtener_foto_perfil(){
 		$resultado["resultad"] = false;
 		$idcontacto = $this->input->post("idcontacto");
@@ -115,6 +149,30 @@ class Citas extends CI_Controller {
 		}
 
 		echo json_encode($resultado);
+	}
+
+	public function editar_cita(){
+		if(!$this->input->get("id")){
+			header('location: ' . base_url("index.php/Agenda"));
+		}else{
+			$cita_id = $this->input->get("id");
+			$datos_cita = $this->obtener_datos_cita($cita_id);
+
+			$this->load->view('main_layout_header',array('titulo' => 'Editar Cita', 'nombre' => $this->session->userdata("nombre")));
+			$this->load->view('main_layout_nav', array('item' => 0));
+			$this->load->view('da_editar_cita', $datos_cita);
+			$this->load->view('main_layout_footer');
+		}
+	}
+
+	public function obtener_datos_cita($cita_id){
+	  $resultado = $this->Modelo->query("SELECT * FROM cita WHERE idcita = " . $cita_id);
+		// echo $this->db->last_query();
+		if(count($resultado) > 0){
+			return $resultado[0];
+		}else{
+			header('location: ' . base_url("index.php/Contactos") . '');
+		}
 	}
 }
 
