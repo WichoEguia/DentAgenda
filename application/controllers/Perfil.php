@@ -56,14 +56,15 @@ class Perfil extends CI_Controller {
 	public function no_citas_hoy($iddentista){
 		$hoy = date("Y-m-d h:i:s");
 
-	  $citas = $this->Modelo->query("SELECT * FROM cita WHERE fecha LIKE '%" . substr($hoy, 10, 9) . "%' AND dentista_id = " . $iddentista);
+	  $citas = $this->Modelo->query("SELECT * FROM cita WHERE fecha LIKE '%" . substr($hoy, 0, 10) . "%' AND dentista_id = " . $iddentista);
 		return count($citas);
 	}
 
 	public function no_citas_manana($iddentista){
-		$mañana = strtotime("+ 1 day", strtotime(date("Y-m-d h:i:s")));
+		$mañana = date("Y-m-d H:i:s", strtotime("+ 1 day", strtotime(date("Y-m-d h:i:s"))));
 
-	  $citas = $this->Modelo->query("SELECT * FROM cita WHERE fecha = '" . substr($mañana, 10, 9) . "' AND dentista_id = " . $iddentista);
+	  $citas = $this->Modelo->query("SELECT * FROM cita WHERE fecha LIKE '%" . substr($mañana, 0, 10) . "%' AND dentista_id = " . $iddentista);
+		// echo $this->db->last_query();
 		return count($citas);
 	}
 
