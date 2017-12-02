@@ -28,7 +28,8 @@
       <div id="informacion_usuario_nombre">
         <?php
           $nombre = explode(" ", $nombre);
-          $nombre = $nombre[0] . " " . $nombre[1];
+          // $nombre = $nombre[0] . " " . $nombre[1];
+          $nombre = count($nombre) >= 2 ? $nombre[0] . " " . $nombre[1] : $nombre[0]
         ?>
         <p>Bienvenido, <?php echo $nombre ?></p>
         <p id="full_date">--/--/---- --:--</p>
